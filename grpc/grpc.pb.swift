@@ -38,13 +38,13 @@ struct Glow_PointRequest {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var x1: Float = 0
+  var x1: Int32 = 0
 
-  var y1: Float = 0
+  var y1: Int32 = 0
 
-  var x2: Float = 0
+  var x2: Int32 = 0
 
-  var y2: Float = 0
+  var y2: Int32 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -79,10 +79,10 @@ extension Glow_PointRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
-      case 1: try decoder.decodeSingularFloatField(value: &self.x1)
-      case 2: try decoder.decodeSingularFloatField(value: &self.y1)
-      case 3: try decoder.decodeSingularFloatField(value: &self.x2)
-      case 4: try decoder.decodeSingularFloatField(value: &self.y2)
+      case 1: try decoder.decodeSingularInt32Field(value: &self.x1)
+      case 2: try decoder.decodeSingularInt32Field(value: &self.y1)
+      case 3: try decoder.decodeSingularInt32Field(value: &self.x2)
+      case 4: try decoder.decodeSingularInt32Field(value: &self.y2)
       default: break
       }
     }
@@ -90,16 +90,16 @@ extension Glow_PointRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.x1 != 0 {
-      try visitor.visitSingularFloatField(value: self.x1, fieldNumber: 1)
+      try visitor.visitSingularInt32Field(value: self.x1, fieldNumber: 1)
     }
     if self.y1 != 0 {
-      try visitor.visitSingularFloatField(value: self.y1, fieldNumber: 2)
+      try visitor.visitSingularInt32Field(value: self.y1, fieldNumber: 2)
     }
     if self.x2 != 0 {
-      try visitor.visitSingularFloatField(value: self.x2, fieldNumber: 3)
+      try visitor.visitSingularInt32Field(value: self.x2, fieldNumber: 3)
     }
     if self.y2 != 0 {
-      try visitor.visitSingularFloatField(value: self.y2, fieldNumber: 4)
+      try visitor.visitSingularInt32Field(value: self.y2, fieldNumber: 4)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
