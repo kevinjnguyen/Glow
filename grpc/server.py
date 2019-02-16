@@ -38,46 +38,91 @@ def down_length():
     #add coordinate to move down
 
 def up_length():
-    return 5*.9875
+    return 5*unit()
     #give coordinate to move up
 
 def rigth_width():
-    return 3*.9875
+    return 3*unit()
     #give coordinate to move up
 
 def left_width():
-    return -3*.9875
+    return -3*unit()
     #give coordinate to move up
-
-
 
 
 #--- Returning our starting positions that we would start at
 def goToFirstPosit():
-    return ((-7*.9875),(5*.9875))
+	req = {}
+	req['x2'] = (-7*unit())
+	req['y2'] = (5*unit())
+    #return ((-7*.9875),(5*.9875))
+    return req
 
 def goToSecondPosit():
-    return ((-3*.9875),(5*.9875))
+	req = {}
+	req['x2'] = (-3*unit())
+	req['y2'] = (5*unit())
+    #return ((-3*.9875),(5*.9875))
+    return req
 
 def goToThirdPosit():
-    return ((.9875),(5*.9875))
+	req = {}
+	req['x2'] = unit()
+	req['y2'] = (5*unit())
+    #return ((.9875),(5*.9875))
+    return req
 
 def goToLastPosit():
-    return ((5*.9875),(5*.9875))
+	req = {}
+	req['x2'] = (5*unit())
+	req['y2'] = (5*unit())
+    #return ((5*.9875),(5*.9875))
+    return req
 
-def num_0():
-    # grab corner start location
-    grab()
+def center():
+	req = {}
+	req['x2'] = float(0)
+	req['y2'] = float(0)
+	return req
+
+#--- Number movement methods
+
+def move_to_coordinates(req):
+	pan_angle, tilt_angle = scale_box_to_pan_tilt(req)
+    pan_pwm = angle_to_pwm_pan(pan_angle)
+    tilt_pwm = angle_to_pwm_tilt(tilt_angle)
+    move_servos(pan_pwm, tilt_pwm)
+
+def num_0(position):
+    req = {}
+    if(position == 0):
+    	req = goToFirstPosit()
+    elif(position == 1):
+    	req = goToSecondPosit()
+    elif(position == 2):
+    	req = goToThirdPosit()
+    else:
+    	req = goToLastPosit()
+
+    move_to_coordinates(req)
 
     laser_on()
-    # yolo random thing method ill explain.
-    move_method(0, down_length())
-    move_method(0, down_length())
-    move_method(0, rigth_width())
-    move_method(0, up_length())
-    move_method(0, up_length())
-    move_method(0, left_width())
+
+    req['y2'] += down_length()
+    move_to_coordinates(req)
+    req['y2'] += down_length()
+    move_to_coordinates(req)
+    req['x2'] += rigth_width()
+    move_to_coordinates(req)
+    req['y2'] += up_length()
+    move_to_coordinates(req)
+    req['y2'] += up_length()
+    move_to_coordinates(req)
+    req['x2'] += left_width()
+    move_to_coordinates(req)
+
     laser_off()
+
     return "0"
 
 def num_1():
