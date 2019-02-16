@@ -45,15 +45,17 @@ class Greeter(grpc_pb2_grpc.GlowServicer):
     mutex = Lock()
 
     def scale_ipad_to_box(self, request):
-        request.x1 = (request.x1/10.0 - 384.0) / 39.38
-        request.x2 = (request.x2/10.0 - 384.0) / 39.38
-        request.y1 = (request.y1/10.0 - 640.0) / -39.38
-        request.y2 = (request.y2/10.0 - 640.0) / -39.38
+        result = {}
+        result['x1'] = (request.x1/10.0 - 384.0) / 39.38
+        result['x2'] = (request.x2/10.0 - 384.0) / 39.38
+        result['y1'] = (request.y1/10.0 - 640.0) / -39.38
+        result['y2'] = (request.y2/10.0 - 640.0) / -39.38
+
         return request
 
     def scale_box_to_pan_tilt(self, request):
-        pan_angle = math.atan(request.x2 / 9.75)
-        tilt_angle = (math.pi / 2) - math.acos(request.y2 / math.sqrt( request.x2 ** 2 + request.y2 **2 + 9.75**2))
+        pan_angle = math.atan(request['x2'] / 9.75)
+        tilt_angle = (math.pi / 2) - math.acos(request['y2'] / math.sqrt( request['x2'] ** 2 + request['y2'] **2 + 9.75**2))
         return pan_angle, tilt_angle
 
     def TestPointReceiving(self, request, context):
