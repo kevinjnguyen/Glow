@@ -1,5 +1,6 @@
 from concurrent import futures
 import time
+from threading import Thread, Lock
 import logging
 
 import grpc
@@ -11,9 +12,27 @@ _ONE_DAY_IN_SECONDS = 60 * 60 * 24
 
 class Greeter(grpc_pb2_grpc.GlowServicer):
 
+    mutex = Lock()
+
+    def scale_ipad_to_box(self, request):
+        request.x1 = (request.x1 - 384.0) / 39.38
+        request.x2 = (request.x2 - 384.0) / 39.38
+        request.y1 = (request.y1 - 640.0) / -39.38
+        request.y2 = (request.y2 - 640.0) / -39.38
+        return request
+
+    def scale_box_to_pan_tilt(self, request):
+        return request
+
     def TestPointReceiving(self, request, context):
-        print(request)
-        print('(' + str(request.x1) + ', ' + str(request.y1) + ') ----> ' + '(' + str(request.x2) + ', ' + str(request.y2) + ')')
+        box_scaled = self.scale_ipad_to_box(request)
+        pan_tilt = self.scale_box_to_pan_tilt(box_scaled)
+
+        self.mutex.acquire()
+        try:
+            print('(' + str(request.x1) + ', ' + str(request.y1) + ') ----> ' + '(' + str(request.x2) + ', ' + str(request.y2) + ')')
+        finally:
+            self.mutex.release()
         return grpc_pb2.GlowReply(message='Receieved!')
 
     def LotsOfPoints(self, request_iterator, context):

@@ -47,6 +47,10 @@ class ViewController: UIViewController {
             return
         }
         
+        if (fromPoint.y < 256.0) {
+            return;
+        }
+        
         points.append((fromPoint, toPoint))
         
         var sendPoint = Glow_PointRequest()
