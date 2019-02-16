@@ -12,6 +12,9 @@ def run():
     # of the code.
     with grpc.insecure_channel('192.168.43.144:50051') as channel:
         stub = grpc_pb2_grpc.GlowStub(channel)
+        points = []
+        points.append(grpc_pb2.PointRequest(x=1, y=2))
+        points.append(grpc_pb2.PointRequest(x=2, y=3))
         response = stub.TestPointReceiving(grpc_pb2.PointRequest(x=1,y=2))
     print("Greeter client received: " + response.message)
 

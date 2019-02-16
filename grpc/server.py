@@ -15,6 +15,11 @@ class Greeter(grpc_pb2_grpc.GlowServicer):
         print('Received: (' + str(request.x) + ', ' + str(request.y) + ')')
         return grpc_pb2.GlowReply(message='Receieved!')
 
+    def LotsOfPoints(self, request_iterator, context):
+        for new_point in request_iterator:
+            print('Received: (' + str(new_point.x) + ', ' + str(new_point.y) + ')')
+        return grpc_pb2.GlowReply(message='Receieved!')
+
 
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))

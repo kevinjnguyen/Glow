@@ -38,9 +38,13 @@ struct Glow_PointRequest {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var x: Int32 = 0
+  var x1: Int32 = 0
 
-  var y: Int32 = 0
+  var y1: Int32 = 0
+
+  var x2: Int32 = 0
+
+  var y2: Int32 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -66,33 +70,45 @@ fileprivate let _protobuf_package = "glow"
 extension Glow_PointRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".PointRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "x"),
-    2: .same(proto: "y"),
+    1: .same(proto: "x1"),
+    2: .same(proto: "y1"),
+    3: .same(proto: "x2"),
+    4: .same(proto: "y2"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
-      case 1: try decoder.decodeSingularInt32Field(value: &self.x)
-      case 2: try decoder.decodeSingularInt32Field(value: &self.y)
+      case 1: try decoder.decodeSingularInt32Field(value: &self.x1)
+      case 2: try decoder.decodeSingularInt32Field(value: &self.y1)
+      case 3: try decoder.decodeSingularInt32Field(value: &self.x2)
+      case 4: try decoder.decodeSingularInt32Field(value: &self.y2)
       default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.x != 0 {
-      try visitor.visitSingularInt32Field(value: self.x, fieldNumber: 1)
+    if self.x1 != 0 {
+      try visitor.visitSingularInt32Field(value: self.x1, fieldNumber: 1)
     }
-    if self.y != 0 {
-      try visitor.visitSingularInt32Field(value: self.y, fieldNumber: 2)
+    if self.y1 != 0 {
+      try visitor.visitSingularInt32Field(value: self.y1, fieldNumber: 2)
+    }
+    if self.x2 != 0 {
+      try visitor.visitSingularInt32Field(value: self.x2, fieldNumber: 3)
+    }
+    if self.y2 != 0 {
+      try visitor.visitSingularInt32Field(value: self.y2, fieldNumber: 4)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   func _protobuf_generated_isEqualTo(other: Glow_PointRequest) -> Bool {
-    if self.x != other.x {return false}
-    if self.y != other.y {return false}
+    if self.x1 != other.x1 {return false}
+    if self.y1 != other.y1 {return false}
+    if self.x2 != other.x2 {return false}
+    if self.y2 != other.y2 {return false}
     if unknownFields != other.unknownFields {return false}
     return true
   }
