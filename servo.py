@@ -38,12 +38,12 @@ def move_servos(top_angle, bottom_angle):
 
 try:
   while True:
-    toggle_relay_status = False
-    GPIO.output(31, toggle_relay_status)
-    temp = input("Toggle: " )
     toggle_relay_status = True
-    GPIO.output(31, toggle_relay_status)
-    temp = input("Toggle: " )
+    # GPIO.output(31, toggle_relay_status)
+    # temp = input("Toggle: " )
+    # toggle_relay_status = True
+    # GPIO.output(31, toggle_relay_status)
+    # temp = input("Toggle: " )
     
     # top_angle = input("Desired top angle?: ")
     # bottom_angle = input("Desired bottom angle?: ")
