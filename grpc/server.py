@@ -126,20 +126,337 @@ def num_0(position):
     return "0"
 
 def num_1():
-    # grab corner start location
-    grab()
-    #yolo random thing method
-    move_method(rigth_width,(5*.9875))
+    req = {}
+    if(position == 0):
+    	req = goToFirstPosit()
+    elif(position == 1):
+    	req = goToSecondPosit()
+    elif(position == 2):
+    	req = goToThirdPosit()
+    else:
+    	req = goToLastPosit()
+
+    move_to_coordinates(req)
+
+
+    req['x2'] += rigth_width()
+    move_to_coordinates(req)
+
     laser_on()
-    move_method(0,down_length())
-    move_method(0,down_length())
+
+
+    req['y2'] += down_length()
+    move_to_coordinates(req)
+    req['y2'] += down_length()
+    move_to_coordinates(req)
+
+    # req['x2'] += rigth_width()
+    # move_to_coordinates(req)
+    # req['y2'] += up_length()
+    # move_to_coordinates(req)
+    # req['y2'] += up_length()
+    # move_to_coordinates(req)
+    # req['x2'] += left_width()
+    # move_to_coordinates(req)
+
     laser_off()
+
     return "1"
 
 def num_2():
-    grab()
-    #yolo random thing method
-    move_method(rigth_width,(5*.9875))
+        req = {}
+        if(position == 0):
+        	req = goToFirstPosit()
+        elif(position == 1):
+        	req = goToSecondPosit()
+        elif(position == 2):
+        	req = goToThirdPosit()
+        else:
+        	req = goToLastPosit()
+
+        # corner
+        move_to_coordinates(req)
+
+        #
+        laser_on()
+
+        req['x2'] += rigth_width()
+        move_to_coordinates(req)
+        req['y2'] += down_length()
+        move_to_coordinates(req)
+        req['x2'] += left_width()
+        move_to_coordinates(req)
+        req['y2'] += down_length()
+        move_to_coordinates(req)
+        req['x2'] += rigth_width()
+        move_to_coordinates(req)
+
+        laser_off()
+
+        return "2"
+
+
+def num_3():
+        req = {}
+        if(position == 0):
+        	req = goToFirstPosit()
+        elif(position == 1):
+        	req = goToSecondPosit()
+        elif(position == 2):
+        	req = goToThirdPosit()
+        else:
+        	req = goToLastPosit()
+
+        # corner
+        move_to_coordinates(req)
+
+        #
+        laser_on()
+
+        req['x2'] += rigth_width()
+        move_to_coordinates(req)
+        req['y2'] += down_length()
+        move_to_coordinates(req)
+        req['x2'] += left_width()
+        move_to_coordinates(req)
+
+        laser_off()
+
+
+        req['x2'] += rigth_width()
+        move_to_coordinates(req)
+
+        laseron()
+
+        req['y2'] += down_length()
+        move_to_coordinates(req)
+        req['x2'] += left_width()
+        move_to_coordinates(req)
+
+        laser_off()
+        return "3"
+
+def num_4():
+    req = {}
+    if(position == 0):
+    	req = goToFirstPosit()
+    elif(position == 1):
+    	req = goToSecondPosit()
+    elif(position == 2):
+    	req = goToThirdPosit()
+    else:
+    	req = goToLastPosit()
+
+    move_to_coordinates(req)
+
+
+    laser_on()
+    req['y2'] += down_length()
+    move_to_coordinates(req)
+    req['x2'] += rigth_width()
+    move_to_coordinates(req)
+    req['y2'] += up_length()
+    move_to_coordinates(req)
+
+    laser_off()
+
+    req['y2'] += down_length()
+    move_to_coordinates(req)
+
+    laser_on()
+
+    req['y2'] += down_length()
+    move_to_coordinates(req)
+
+    laser_off()
+
+    return "4"
+
+def num_5():
+    req = {}
+    if(position == 0):
+    	req = goToFirstPosit()
+    elif(position == 1):
+    	req = goToSecondPosit()
+    elif(position == 2):
+    	req = goToThirdPosit()
+    else:
+    	req = goToLastPosit()
+
+    move_to_coordinates(req)
+
+    req['x2'] += rigth_width()
+    move_to_coordinates(req)
+
+    laser_on()
+
+    req['x2'] += left_width()
+    move_to_coordinates(req)
+    req['y2'] += down_length()
+    move_to_coordinates(req)
+
+    req['x2'] += rig_width()
+    move_to_coordinates(req)
+
+
+    req['y2'] += down_length()
+    move_to_coordinates(req)
+    req['x2'] += left_width()
+    move_to_coordinates(req)
+
+    laser_off()
+
+    return "5"
+
+def num_6():
+    req = {}
+    if(position == 0):
+    	req = goToFirstPosit()
+    elif(position == 1):
+    	req = goToSecondPosit()
+    elif(position == 2):
+    	req = goToThirdPosit()
+    else:
+    	req = goToLastPosit()
+
+    move_to_coordinates(req)
+
+
+    req['x2'] += rigth_width()
+    move_to_coordinates(req)
+
+    laser_on()
+
+    req['x2'] += left_width()
+    move_to_coordinates(req)
+
+    req['y2'] += down_length()
+    move_to_coordinates(req)
+    req['y2'] += down_length()
+    move_to_coordinates(req)
+
+    req['x2'] += rigth_width()
+    move_to_coordinates(req)
+
+    req['y2'] += up_length()
+    move_to_coordinates(req)
+
+    req['x2'] += left_width()
+    move_to_coordinates(req)
+
+    laser_off()
+
+    return "6"
+
+
+def num_7():
+    req = {}
+    if(position == 0):
+    	req = goToFirstPosit()
+    elif(position == 1):
+    	req = goToSecondPosit()
+    elif(position == 2):
+    	req = goToThirdPosit()
+    else:
+    	req = goToLastPosit()
+
+    move_to_coordinates(req)
+
+    laser_on()
+
+    req['x2'] += rigth_width()
+    move_to_coordinates(req)
+
+    req['y2'] += down_length()
+    move_to_coordinates(req)
+    req['y2'] += down_length()
+    move_to_coordinates(req)
+
+    laser_off()
+
+    return "7"
+
+def num_8(position):
+    req = {}
+    if(position == 0):
+    	req = goToFirstPosit()
+    elif(position == 1):
+    	req = goToSecondPosit()
+    elif(position == 2):
+    	req = goToThirdPosit()
+    else:
+    	req = goToLastPosit()
+
+    move_to_coordinates(req)
+
+    laser_on()
+
+    req['y2'] += down_length()
+    move_to_coordinates(req)
+    req['y2'] += down_length()
+    move_to_coordinates(req)
+    req['x2'] += rigth_width()
+    move_to_coordinates(req)
+    req['y2'] += up_length()
+    move_to_coordinates(req)
+    req['y2'] += up_length()
+    move_to_coordinates(req)
+    req['x2'] += left_width()
+    move_to_coordinates(req)
+
+    laser_off()
+
+    req['y2'] += down_length()
+    move_to_coordinates(req)
+
+    laser_on()
+
+    req['x2'] += rigth_width()
+    move_to_coordinates(req)
+
+    laser_off()
+
+    return "8"
+
+
+def num_9():
+    req = {}
+    if(position == 0):
+    	req = goToFirstPosit()
+    elif(position == 1):
+    	req = goToSecondPosit()
+    elif(position == 2):
+    	req = goToThirdPosit()
+    else:
+    	req = goToLastPosit()
+
+    move_to_coordinates(req)
+
+    req['x2'] += rigth_width()
+    move_to_coordinates(req)
+    req['y2'] += down_length()
+    move_to_coordinates(req)
+
+    laser_on()
+
+    req['x2'] += left_width()
+    move_to_coordinates(req)
+    req['y2'] += up_length()
+    move_to_coordinates(req)
+    req['x2'] += rigth_width()
+    move_to_coordinates(req)
+    req['y2'] += down_length()
+    move_to_coordinates(req)
+    req['y2'] += down_length()
+    move_to_coordinates(req)
+
+
+    laser_off()
+
+    return "9"
+
+
+
 
 def clockwork():
 
@@ -230,7 +547,7 @@ def serve():
         while True:
             polling()
             time.sleep(_ONE_DAY_IN_SECONDS)
-        
+
     except KeyboardInterrupt:
         laser_off()
         top_servo.stop()
@@ -242,9 +559,8 @@ def polling():
     while True:
         p = Thread(target = processData)
         p.start()
-        
+
 
 if __name__ == '__main__':
     logging.basicConfig()
     serve()
-
