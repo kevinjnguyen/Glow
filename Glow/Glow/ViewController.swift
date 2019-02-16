@@ -24,6 +24,7 @@ class ViewController: UIViewController {
     let glow_rep = GlowRepository.shared
     
     var points: [(CGPoint, CGPoint)] = []
+    var lineNum = 0
     
     var isSending: Bool = false
     var info = Glow_GlowReply()
@@ -58,6 +59,8 @@ class ViewController: UIViewController {
         sendPoint.x2 =  Int32(Int(toPoint.x * 10))
         sendPoint.y1 =  Int32(Int(fromPoint.y * 10))
         sendPoint.y2 =  Int32(Int(toPoint.y * 10))
+        sendPoint.line = Int32(lineNum)
+        
         do {
             try glow_rep.sendPoint(point: sendPoint)
         } catch {
@@ -110,6 +113,8 @@ class ViewController: UIViewController {
             // draw a single point
             drawLine(from: lastPoint, to: lastPoint)
         }
+        
+        lineNum += 1
         
         // Merge tempImageView into mainImageView
         UIGraphicsBeginImageContext(mainImageView.frame.size)

@@ -46,6 +46,8 @@ struct Glow_PointRequest {
 
   var y2: Int32 = 0
 
+  var line: Int32 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -74,6 +76,7 @@ extension Glow_PointRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     2: .same(proto: "y1"),
     3: .same(proto: "x2"),
     4: .same(proto: "y2"),
+    5: .same(proto: "line"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -83,6 +86,7 @@ extension Glow_PointRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
       case 2: try decoder.decodeSingularInt32Field(value: &self.y1)
       case 3: try decoder.decodeSingularInt32Field(value: &self.x2)
       case 4: try decoder.decodeSingularInt32Field(value: &self.y2)
+      case 5: try decoder.decodeSingularInt32Field(value: &self.line)
       default: break
       }
     }
@@ -101,6 +105,9 @@ extension Glow_PointRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     if self.y2 != 0 {
       try visitor.visitSingularInt32Field(value: self.y2, fieldNumber: 4)
     }
+    if self.line != 0 {
+      try visitor.visitSingularInt32Field(value: self.line, fieldNumber: 5)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -109,6 +116,7 @@ extension Glow_PointRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     if self.y1 != other.y1 {return false}
     if self.x2 != other.x2 {return false}
     if self.y2 != other.y2 {return false}
+    if self.line != other.line {return false}
     if unknownFields != other.unknownFields {return false}
     return true
   }

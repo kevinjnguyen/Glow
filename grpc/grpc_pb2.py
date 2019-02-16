@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='glow',
   syntax='proto3',
   serialized_options=_b('\n\020io.tamumake.glowB\004GlowP\001\242\002\003HLW'),
-  serialized_pb=_b('\n\ngrpc.proto\x12\x04glow\">\n\x0cPointRequest\x12\n\n\x02x1\x18\x01 \x01(\x05\x12\n\n\x02y1\x18\x02 \x01(\x05\x12\n\n\x02x2\x18\x03 \x01(\x05\x12\n\n\x02y2\x18\x04 \x01(\x05\"\x1c\n\tGlowReply\x12\x0f\n\x07message\x18\x01 \x01(\t2|\n\x04Glow\x12;\n\x12TestPointReceiving\x12\x12.glow.PointRequest\x1a\x0f.glow.GlowReply\"\x00\x12\x37\n\x0cLotsOfPoints\x12\x12.glow.PointRequest\x1a\x0f.glow.GlowReply\"\x00(\x01\x42 \n\x10io.tamumake.glowB\x04GlowP\x01\xa2\x02\x03HLWb\x06proto3')
+  serialized_pb=_b('\n\ngrpc.proto\x12\x04glow\"L\n\x0cPointRequest\x12\n\n\x02x1\x18\x01 \x01(\x05\x12\n\n\x02y1\x18\x02 \x01(\x05\x12\n\n\x02x2\x18\x03 \x01(\x05\x12\n\n\x02y2\x18\x04 \x01(\x05\x12\x0c\n\x04line\x18\x05 \x01(\x05\"\x1c\n\tGlowReply\x12\x0f\n\x07message\x18\x01 \x01(\t2|\n\x04Glow\x12;\n\x12TestPointReceiving\x12\x12.glow.PointRequest\x1a\x0f.glow.GlowReply\"\x00\x12\x37\n\x0cLotsOfPoints\x12\x12.glow.PointRequest\x1a\x0f.glow.GlowReply\"\x00(\x01\x42 \n\x10io.tamumake.glowB\x04GlowP\x01\xa2\x02\x03HLWb\x06proto3')
 )
 
 
@@ -60,6 +60,13 @@ _POINTREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='line', full_name='glow.PointRequest.line', index=4,
+      number=5, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -73,7 +80,7 @@ _POINTREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=20,
-  serialized_end=82,
+  serialized_end=96,
 )
 
 
@@ -103,8 +110,8 @@ _GLOWREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=84,
-  serialized_end=112,
+  serialized_start=98,
+  serialized_end=126,
 )
 
 DESCRIPTOR.message_types_by_name['PointRequest'] = _POINTREQUEST
@@ -134,8 +141,8 @@ _GLOW = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=114,
-  serialized_end=238,
+  serialized_start=128,
+  serialized_end=252,
   methods=[
   _descriptor.MethodDescriptor(
     name='TestPointReceiving',
