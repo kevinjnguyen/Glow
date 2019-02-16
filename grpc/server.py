@@ -51,7 +51,7 @@ class Greeter(grpc_pb2_grpc.GlowServicer):
         result['y1'] = (request.y1/10.0 - 640.0) / -39.38
         result['y2'] = (request.y2/10.0 - 640.0) / -39.38
 
-        return request
+        return result
 
     def scale_box_to_pan_tilt(self, request):
         pan_angle = math.atan(request['x2'] / 9.75)
