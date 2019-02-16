@@ -81,6 +81,7 @@ class Greeter(grpc_pb2_grpc.GlowServicer):
 
 def processData():
     mutex.acquire()
+    global current_line
     try:
         if len(queue) > 0:
             print('Should be moving...')
