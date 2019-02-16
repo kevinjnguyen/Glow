@@ -297,7 +297,7 @@ def num_5(position):
     req['y2'] += down_length()
     move_to_coordinates(req)
 
-    req['x2'] += rig_width()
+    req['x2'] += right_width()
     move_to_coordinates(req)
 
 
