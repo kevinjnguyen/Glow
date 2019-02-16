@@ -59,7 +59,8 @@ class Greeter(grpc_pb2_grpc.GlowServicer):
     def TestPointReceiving(self, request, context):
         box_scaled = self.scale_ipad_to_box(request)
         pan_angle, tilt_angle = self.scale_box_to_pan_tilt(box_scaled)
-        move_servos(pan_angle, tilt_angle)
+
+        move_servos(angle_to_pwm_pan(pan_angle), angle_to_pwm_tilt(tilt_angle))
 
         # self.mutex.acquire()
         # try:
