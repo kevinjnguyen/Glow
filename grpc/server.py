@@ -462,79 +462,81 @@ def draw_time():
 	hour = (now.hour)%12
 	minute_str = now.strftime("%M")
 	
-	# draw the hours
-	if(hour == 1):
-		num_0(0)
-		num_1(1)
-	elif(hour == 2):
-		num_0(0)
-		num_2(1)
-	elif(hour == 3):
-		num_0(0)
-		num_3(1)
-	elif(hour == 4):
-		num_0(0)
-		num_4(1)
-	elif(hour == 5):
-		num_0(0)
-		num_5(1)
-	elif(hour == 6):
-		num_0(0)
-		num_6(1)
-	elif(hour == 7):
-		num_0(0)
-		num_7(1)
-	elif(hour == 8):
-		num_0(0)
-		num_8(1)
-	elif(hour == 9):
-		num_0(0)
-		num_9(1)
-	elif(hour == 10):
-		num_1(0)
-		num_0(1)
-	elif(hour == 11):
-		num_1(0)
-		num_1(1)
-	elif(hour == 12):
-		num_1(0)
-		num_2(1)
+    num_0(0)
+    
+	# # draw the hours
+	# if(hour == 1):
+	# 	num_0(0)
+	# 	num_1(1)
+	# elif(hour == 2):
+	# 	num_0(0)
+	# 	num_2(1)
+	# elif(hour == 3):
+	# 	num_0(0)
+	# 	num_3(1)
+	# elif(hour == 4):
+	# 	num_0(0)
+	# 	num_4(1)
+	# elif(hour == 5):
+	# 	num_0(0)
+	# 	num_5(1)
+	# elif(hour == 6):
+	# 	num_0(0)
+	# 	num_6(1)
+	# elif(hour == 7):
+	# 	num_0(0)
+	# 	num_7(1)
+	# elif(hour == 8):
+	# 	num_0(0)
+	# 	num_8(1)
+	# elif(hour == 9):
+	# 	num_0(0)
+	# 	num_9(1)
+	# elif(hour == 10):
+	# 	num_1(0)
+	# 	num_0(1)
+	# elif(hour == 11):
+	# 	num_1(0)
+	# 	num_1(1)
+	# elif(hour == 12):
+	# 	num_1(0)
+	# 	num_2(1)
 
-	# draw first minute
-	if(minute_str[0] == 0):
-		num_0(2)
-	elif(minute_str[0] == 1):
-		num_1(2)
-	elif(minute_str[0] == 2):
-		num_2(2)
-	elif(minute_str[0] == 3):
-		num_3(2)
-	elif(minute_str[0] == 4):
-		num_4(2)
-	elif(minute_str[0] == 5):
-		num_5(2)
+	# # draw first minute
+	# if(minute_str[0] == 0):
+	# 	num_0(2)
+	# elif(minute_str[0] == 1):
+	# 	num_1(2)
+	# elif(minute_str[0] == 2):
+	# 	num_2(2)
+	# elif(minute_str[0] == 3):
+	# 	num_3(2)
+	# elif(minute_str[0] == 4):
+	# 	num_4(2)
+	# elif(minute_str[0] == 5):
+	# 	num_5(2)
 
-	# draw second minute
-	if(minute_str[1] == 0):
-		num_0(3)
-	elif(minute_str[1] == 1):
-		num_1(3)
-	elif(minute_str[1] == 2):
-		num_2(3)
-	elif(minute_str[1] == 3):
-		num_3(3)
-	elif(minute_str[1] == 4):
-		num_4(3)
-	elif(minute_str[1] == 5):
-		num_5(3)
-	elif(minute_str[1] == 6):
-		num_6(3)
-	elif(minute_str[1] == 7):
-		num_7(3)
-	elif(minute_str[1] == 8):
-		num_8(3)
-	elif(minute_str[1] == 9):
-		num_9(3)
+	# # draw second minute
+	# if(minute_str[1] == 0):
+	# 	num_0(3)
+	# elif(minute_str[1] == 1):
+	# 	num_1(3)
+	# elif(minute_str[1] == 2):
+	# 	num_2(3)
+	# elif(minute_str[1] == 3):
+	# 	num_3(3)
+	# elif(minute_str[1] == 4):
+	# 	num_4(3)
+	# elif(minute_str[1] == 5):
+	# 	num_5(3)
+	# elif(minute_str[1] == 6):
+	# 	num_6(3)
+	# elif(minute_str[1] == 7):
+	# 	num_7(3)
+	# elif(minute_str[1] == 8):
+	# 	num_8(3)
+	# elif(minute_str[1] == 9):
+	# 	num_9(3)
 
 
 # -------------clockwork------------------- dorick branch END
