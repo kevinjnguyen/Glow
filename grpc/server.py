@@ -465,6 +465,9 @@ def draw_time():
 	# hour = (now.hour) % 12
 	# minute_str = now.strftime("%M")
     draw_num_0(0)
+    draw_num_0(1)
+    draw_num_0(2)
+    draw_num_0(3)
     return ""
 	# # draw the hours
 	# if(hour == 1):
