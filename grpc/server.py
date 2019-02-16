@@ -50,19 +50,34 @@ class Greeter(grpc_pb2_grpc.GlowServicer):
         result['x2'] = (request.x2/10.0 - 384.0) / 39.38
         result['y1'] = (request.y1/10.0 - 640.0) / -39.38
         result['y2'] = (request.y2/10.0 - 640.0) / -39.38
-
+        print('--- Scaling iPad to Box ---')
+        print(result['x2'])
+        print(result['y2'])
+        print('--- End of Scaling iPad to Box ---')
         return result
 
     def scale_box_to_pan_tilt(self, request):
         pan_angle = math.atan(request['x2'] / 9.75)
         tilt_angle = (math.pi / 2) - math.acos(request['y2'] / math.sqrt( request['x2'] ** 2 + request['y2'] **2 + 9.75**2))
+
+        print('--- Scaling Box to Pan Tilt ---')
+        print(pan_angle)
+        print(tilt_angle)
+        print('--- End of Box to Pan Tilt ---')
         return pan_angle, tilt_angle
 
     def TestPointReceiving(self, request, context):
         box_scaled = self.scale_ipad_to_box(request)
         pan_angle, tilt_angle = self.scale_box_to_pan_tilt(box_scaled)
 
-        move_servos(angle_to_pwm_pan(pan_angle), angle_to_pwm_tilt(tilt_angle))
+        print('--- PWM Pan ---')
+        pan_pwm = angle_to_pwm_pan(pan_angle)
+        print('--- End PWM Pan ---')
+
+        print('--- PWM Tilt ---')
+        tilt_pwm = angle_to_pwm_tilt(tilt_angle)
+        print('--- End PWM Tilt ---')
+        move_servos(pan_pwm, tilt_pwm)
 
         # self.mutex.acquire()
         # try:
