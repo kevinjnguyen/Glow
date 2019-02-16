@@ -4,6 +4,7 @@ import time
 GPIO.setmode(GPIO.BOARD)
 
 GPIO.setup(12, GPIO.OUT)
+GPIO.setup(31, GPIO.OUT)
 GPIO.setup(33, GPIO.OUT)
 
 bottom_servo = GPIO.PWM(12, 50)
@@ -37,9 +38,16 @@ def move_servos(top_angle, bottom_angle):
 
 try:
   while True:
-    top_angle = input("Desired top angle?: ")
-    bottom_angle = input("Desired bottom angle?: ")
-    move_servos(float(top_angle), float(bottom_angle))
+    toggle_relay_status = False
+    GPIO.output(31, toggle_relay_status)
+    toggle_relay = input("Toggle" )
+    toggle_relay_status = True
+    GPIO.output(31, toggle_relay_status)
+    toggle_relay = input("Toggle" )
+    
+    # top_angle = input("Desired top angle?: ")
+    # bottom_angle = input("Desired bottom angle?: ")
+    # move_servos(float(top_angle), float(bottom_angle))
 except KeyboardInterrupt:
   top_servo.stop()
   bottom_servo.stop()
