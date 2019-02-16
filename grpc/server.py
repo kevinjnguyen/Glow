@@ -98,6 +98,7 @@ def move_to_coordinates(request):
 
 
 def draw_num_0(position):
+    laser_off()
     req = {}
     if(position == 0):
     	req = goToFirstPosit()
@@ -463,6 +464,7 @@ def draw_time():
 	# now = datetime.datetime.now()
 	# hour = (now.hour) % 12
 	# minute_str = now.strftime("%M")
+    
     draw_num_0(0)
     return ""
 	# # draw the hours
