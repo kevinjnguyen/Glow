@@ -464,7 +464,7 @@ def draw_time():
 	# now = datetime.datetime.now()
 	# hour = (now.hour) % 12
 	# minute_str = now.strftime("%M")
-    
+    laser_off()
     draw_num_0(0)
     return ""
 	# # draw the hours
