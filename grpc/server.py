@@ -140,6 +140,7 @@ def polling():
         p.start()
         if (line.did_start_new_line):
             time.sleep(0.5)
+            line.did_start_new_line = False
         
 
 if __name__ == '__main__':
