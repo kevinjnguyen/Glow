@@ -16,7 +16,7 @@ class GlowRepository {
     private init() {}
     private let client = Glow_GlowServiceClient.init(address: RASPBERRY_IP, secure: false)
     
-    func tryTest() throws {
-        print(try client.testPointReceiving(Glow_PointRequest()).message)
+    func sendPoint(point: Glow_PointRequest) throws {
+        try client.testPointReceiving(point)
     }
 }

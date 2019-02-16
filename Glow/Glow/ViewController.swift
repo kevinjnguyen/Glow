@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftGRPC
+import SwiftVideoBackground
 
 class ViewController: UIViewController {
 
@@ -29,25 +30,17 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     @IBAction func resetTouchBegan(_ sender: Any) {
         mainImageView.image = nil
         self.isSending = false;
+        self.points = []
     }
     
-    @IBAction func sendTouchBegan(_ sender: Any) {
-        self.isSending = true;
-        do {
-            try glow_rep.tryTest()
-        } catch {
-            
-            print(error)
-        }
+    @IBAction func didPressBack(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
-    
     func drawLine(from fromPoint: CGPoint, to toPoint: CGPoint) {
         
         if (isSending) {
@@ -55,6 +48,17 @@ class ViewController: UIViewController {
         }
         
         points.append((fromPoint, toPoint))
+        
+        var sendPoint = Glow_PointRequest()
+        sendPoint.x1 = Int32(Int(fromPoint.x * 10))
+        sendPoint.x2 =  Int32(Int(toPoint.x * 10))
+        sendPoint.y1 =  Int32(Int(fromPoint.y * 10))
+        sendPoint.y2 =  Int32(Int(toPoint.y * 10))
+        do {
+            try glow_rep.sendPoint(point: sendPoint)
+        } catch {
+            print("error")
+        }
         
         UIGraphicsBeginImageContext(view.frame.size)
         guard let context = UIGraphicsGetCurrentContext() else {

@@ -23,10 +23,12 @@ PODS:
     - gRPC-Core (~> 1.12.0)
     - SwiftProtobuf (~> 1.1.1)
   - SwiftProtobuf (1.1.2)
+  - SwiftVideoBackground (3.1.0)
 
 DEPENDENCIES:
   - SwiftGRPC
   - SwiftProtobuf (~> 1.0)
+  - SwiftVideoBackground (~> 3.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -35,6 +37,7 @@ SPEC REPOS:
     - nanopb
     - SwiftGRPC
     - SwiftProtobuf
+    - SwiftVideoBackground
 
 SPEC CHECKSUMS:
   BoringSSL: e10f92a27043805c01071fe815a5cd98ae8212e7
@@ -42,7 +45,8 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   SwiftGRPC: f9dcbc329b17c1cf20216ab0e24208189f880412
   SwiftProtobuf: 7147b8ec19c8c0694a45155d989ea9e6dedaf51f
+  SwiftVideoBackground: 628408dbd5eb20b5f82f394aac9615d29aecb2f6
 
-PODFILE CHECKSUM: 6459418e7f805fbcb6f2802e7fceea23256deb71
+PODFILE CHECKSUM: 51ce44d9595a491bd30d7faacab8719a246ef9d5
 
 COCOAPODS: 1.6.0

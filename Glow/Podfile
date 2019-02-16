@@ -8,6 +8,7 @@ target 'Glow' do
   # Pods for Glow
   pod 'SwiftGRPC'
   pod 'SwiftProtobuf', '~> 1.0'
+  pod 'SwiftVideoBackground', '~> 3.0'
   
   target 'GlowTests' do
     inherit! :search_paths

@@ -31,6 +31,27 @@ fileprivate final class Glow_GlowTestPointReceivingCallBase: ClientCallUnaryBase
   override class var method: String { return "/glow.Glow/TestPointReceiving" }
 }
 
+internal protocol Glow_GlowLotsOfPointsCall: ClientCallClientStreaming {
+  /// Send a message to the stream. Nonblocking.
+  func send(_ message: Glow_PointRequest, completion: @escaping (Error?) -> Void) throws
+  /// Do not call this directly, call `send()` in the protocol extension below instead.
+  func _send(_ message: Glow_PointRequest, timeout: DispatchTime) throws
+
+  /// Call this to close the connection and wait for a response. Blocking.
+  func closeAndReceive() throws -> Glow_GlowReply
+  /// Call this to close the connection and wait for a response. Nonblocking.
+  func closeAndReceive(completion: @escaping (ResultOrRPCError<Glow_GlowReply>) -> Void) throws
+}
+
+internal extension Glow_GlowLotsOfPointsCall {
+  /// Send a message to the stream and wait for the send operation to finish. Blocking.
+  func send(_ message: Glow_PointRequest, timeout: DispatchTime = .distantFuture) throws { try self._send(message, timeout: timeout) }
+}
+
+fileprivate final class Glow_GlowLotsOfPointsCallBase: ClientCallClientStreamingBase<Glow_PointRequest, Glow_GlowReply>, Glow_GlowLotsOfPointsCall {
+  override class var method: String { return "/glow.Glow/LotsOfPoints" }
+}
+
 
 /// Instantiate Glow_GlowServiceClient, then call methods of this protocol to make API calls.
 internal protocol Glow_GlowService: ServiceClient {
@@ -38,6 +59,11 @@ internal protocol Glow_GlowService: ServiceClient {
   func testPointReceiving(_ request: Glow_PointRequest) throws -> Glow_GlowReply
   /// Asynchronous. Unary.
   func testPointReceiving(_ request: Glow_PointRequest, completion: @escaping (Glow_GlowReply?, CallResult) -> Void) throws -> Glow_GlowTestPointReceivingCall
+
+  /// Asynchronous. Client-streaming.
+  /// Use methods on the returned object to stream messages and
+  /// to close the connection and wait for a final response.
+  func lotsOfPoints(completion: ((CallResult) -> Void)?) throws -> Glow_GlowLotsOfPointsCall
 
 }
 
@@ -51,6 +77,14 @@ internal final class Glow_GlowServiceClient: ServiceClientBase, Glow_GlowService
   internal func testPointReceiving(_ request: Glow_PointRequest, completion: @escaping (Glow_GlowReply?, CallResult) -> Void) throws -> Glow_GlowTestPointReceivingCall {
     return try Glow_GlowTestPointReceivingCallBase(channel)
       .start(request: request, metadata: metadata, completion: completion)
+  }
+
+  /// Asynchronous. Client-streaming.
+  /// Use methods on the returned object to stream messages and
+  /// to close the connection and wait for a final response.
+  internal func lotsOfPoints(completion: ((CallResult) -> Void)?) throws -> Glow_GlowLotsOfPointsCall {
+    return try Glow_GlowLotsOfPointsCallBase(channel)
+      .start(metadata: metadata, completion: completion)
   }
 
 }

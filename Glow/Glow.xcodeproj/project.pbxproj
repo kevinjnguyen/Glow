@@ -20,6 +20,8 @@
 		EAD335D32217FCD40072914B /* grpc.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD335D12217FCD40072914B /* grpc.pb.swift */; };
 		EAD335D42217FCD40072914B /* grpc.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD335D22217FCD40072914B /* grpc.grpc.swift */; };
 		EAD335D62217FCEF0072914B /* GlowRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD335D52217FCEF0072914B /* GlowRepository.swift */; };
+		EAD335D9221828B10072914B /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD335D8221828B10072914B /* LandingViewController.swift */; };
+		EAD335DA22182B7F0072914B /* Candolim-Beach.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EAD335D7221827EA0072914B /* Candolim-Beach.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		EAD335D12217FCD40072914B /* grpc.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = grpc.pb.swift; sourceTree = "<group>"; };
 		EAD335D22217FCD40072914B /* grpc.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = grpc.grpc.swift; sourceTree = "<group>"; };
 		EAD335D52217FCEF0072914B /* GlowRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowRepository.swift; sourceTree = "<group>"; };
+		EAD335D7221827EA0072914B /* Candolim-Beach.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Candolim-Beach.mp4"; sourceTree = "<group>"; };
+		EAD335D8221828B10072914B /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,7 @@
 		EA521E6A2217AEEA00D854B8 /* Glow */ = {
 			isa = PBXGroup;
 			children = (
+				EAD335D7221827EA0072914B /* Candolim-Beach.mp4 */,
 				EAD335D22217FCD40072914B /* grpc.grpc.swift */,
 				EAD335D12217FCD40072914B /* grpc.pb.swift */,
 				EA521E6B2217AEEA00D854B8 /* AppDelegate.swift */,
@@ -152,6 +157,7 @@
 				EA521E742217AEEB00D854B8 /* LaunchScreen.storyboard */,
 				EA521E772217AEEB00D854B8 /* Info.plist */,
 				EAD335D52217FCEF0072914B /* GlowRepository.swift */,
+				EAD335D8221828B10072914B /* LandingViewController.swift */,
 			);
 			path = Glow;
 			sourceTree = "<group>";
@@ -282,6 +288,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAD335DA22182B7F0072914B /* Candolim-Beach.mp4 in Resources */,
 				EA521E762217AEEB00D854B8 /* LaunchScreen.storyboard in Resources */,
 				EA521E732217AEEB00D854B8 /* Assets.xcassets in Resources */,
 				EA521E712217AEEA00D854B8 /* Main.storyboard in Resources */,
@@ -383,6 +390,7 @@
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftGRPC/SwiftGRPC.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftProtobuf/SwiftProtobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftVideoBackground/SwiftVideoBackground.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -393,6 +401,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftGRPC.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftProtobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftVideoBackground.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -412,6 +421,7 @@
 				EAD335D42217FCD40072914B /* grpc.grpc.swift in Sources */,
 				EA521E6E2217AEEA00D854B8 /* ViewController.swift in Sources */,
 				EAD335D32217FCD40072914B /* grpc.pb.swift in Sources */,
+				EAD335D9221828B10072914B /* LandingViewController.swift in Sources */,
 				EA521E6C2217AEEA00D854B8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
