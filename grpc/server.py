@@ -36,50 +36,50 @@ line = current_line(0)
 # -------------clockwork------------------- dorick branch BEGIN
 
 #---definitions
-def unit():
+def get_unit():
     return .9875
     # 1 unit is .9875
 
 def down_length():
-    return -5*unit()
+    return -5*get_unit()
     #add coordinate to move down
 
 def up_length():
-    return 5*unit()
+    return 5*get_unit()
     #give coordinate to move up
 
 def rigth_width():
-    return 3*unit()
+    return 3*get_unit()
     #give coordinate to move up
 
 def left_width():
-    return -3*unit()
+    return -3*get_unit()
     #give coordinate to move up
 
 
 # --- Returning our starting positions that we would start at
 def goToFirstPosit():
     req = {}
-    req['x2'] = -7*unit()
-    req['y2'] = 5*unit()
+    req['x2'] = -7*get_unit()
+    req['y2'] = 5*get_unit()
     return req
 
 def goToSecondPosit():
     req = {}
-    req['x2'] = -3*unit()
-    req['y2'] = 5*unit()
+    req['x2'] = -3*get_unit()
+    req['y2'] = 5*get_unit()
     return req
 
 def goToThirdPosit():
     req = {}
-    req['x2'] = *unit()
-    req['y2'] = 5*unit()
+    req['x2'] = *get_unit()
+    req['y2'] = 5*get_unit()
     return req
 
 def goToLastPosit():
     req = {}
-    req['x2'] = 5*unit()
-    req['y2'] = 5*unit()
+    req['x2'] = 5*get_unit()
+    req['y2'] = 5*get_unit()
     return req
 
 def goToCenter():
