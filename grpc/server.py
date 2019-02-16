@@ -80,12 +80,13 @@ def processData():
     mutex.acquire()
     try:
         print('PD: Acquired the lock.')
-        request = queue.popleft()
-        box_scaled = scale_ipad_to_box(request)
-        pan_angle, tilt_angle = scale_box_to_pan_tilt(box_scaled)
-        pan_pwm = angle_to_pwm_pan(pan_angle)
-        tilt_pwm = angle_to_pwm_tilt(tilt_angle)
-        move_servos(pan_pwm, tilt_pwm)
+        if queue.count > 0:
+            request = queue.popleft()
+            box_scaled = scale_ipad_to_box(request)
+            pan_angle, tilt_angle = scale_box_to_pan_tilt(box_scaled)
+            pan_pwm = angle_to_pwm_pan(pan_angle)
+            tilt_pwm = angle_to_pwm_tilt(tilt_angle)
+            move_servos(pan_pwm, tilt_pwm)
     finally:
         print('PD: Released the lock.')
         mutex.release()
