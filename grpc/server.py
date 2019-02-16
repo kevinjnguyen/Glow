@@ -65,29 +65,28 @@ def goToFirstPosit():
     return req
 
 def goToSecondPosit():
-	req = {}
-	req['x2'] = -3*unit()
-	req['y2'] = 5*unit()
+    req = {}
+    req['x2'] = -3*unit()
+    req['y2'] = 5*unit()
     return req
 
 def goToThirdPosit():
-	req = {}
-	req['x2'] = unit()
-	req['y2'] = 5*unit()
+    req = {}
+    req['x2'] = *unit()
+    req['y2'] = 5*unit()
     return req
 
 def goToLastPosit():
-	req = {}
-	req['x2'] = (5*unit())
-	req['y2'] = (5*unit())
-    #return ((5*.9875),(5*.9875))
+    req = {}
+    req['x2'] = 5*unit()
+    req['y2'] = 5*unit()
     return req
 
 def goToCenter():
-	req = {}
-	req['x2'] = float(0)
-	req['y2'] = float(0)
-	return req
+    req = {}
+    req['x2'] = float(0)
+    req['y2'] = float(0)
+    return req
 
 #--- Number movement methods
 
