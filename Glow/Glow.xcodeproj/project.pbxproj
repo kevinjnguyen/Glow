@@ -1,0 +1,587 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EA521E6C2217AEEA00D854B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA521E6B2217AEEA00D854B8 /* AppDelegate.swift */; };
+		EA521E6E2217AEEA00D854B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA521E6D2217AEEA00D854B8 /* ViewController.swift */; };
+		EA521E712217AEEA00D854B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA521E6F2217AEEA00D854B8 /* Main.storyboard */; };
+		EA521E732217AEEB00D854B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA521E722217AEEB00D854B8 /* Assets.xcassets */; };
+		EA521E762217AEEB00D854B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA521E742217AEEB00D854B8 /* LaunchScreen.storyboard */; };
+		EA521E812217AEEB00D854B8 /* GlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA521E802217AEEB00D854B8 /* GlowTests.swift */; };
+		EA521E8C2217AEEB00D854B8 /* GlowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA521E8B2217AEEB00D854B8 /* GlowUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EA521E7D2217AEEB00D854B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA521E602217AEEA00D854B8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EA521E672217AEEA00D854B8;
+			remoteInfo = Glow;
+		};
+		EA521E882217AEEB00D854B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA521E602217AEEA00D854B8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EA521E672217AEEA00D854B8;
+			remoteInfo = Glow;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EA521E682217AEEA00D854B8 /* Glow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Glow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA521E6B2217AEEA00D854B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EA521E6D2217AEEA00D854B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EA521E702217AEEA00D854B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EA521E722217AEEB00D854B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EA521E752217AEEB00D854B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EA521E772217AEEB00D854B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA521E7C2217AEEB00D854B8 /* GlowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GlowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA521E802217AEEB00D854B8 /* GlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowTests.swift; sourceTree = "<group>"; };
+		EA521E822217AEEB00D854B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA521E872217AEEB00D854B8 /* GlowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GlowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA521E8B2217AEEB00D854B8 /* GlowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowUITests.swift; sourceTree = "<group>"; };
+		EA521E8D2217AEEB00D854B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EA521E652217AEEA00D854B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA521E792217AEEB00D854B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA521E842217AEEB00D854B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EA521E5F2217AEEA00D854B8 = {
+			isa = PBXGroup;
+			children = (
+				EA521E6A2217AEEA00D854B8 /* Glow */,
+				EA521E7F2217AEEB00D854B8 /* GlowTests */,
+				EA521E8A2217AEEB00D854B8 /* GlowUITests */,
+				EA521E692217AEEA00D854B8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EA521E692217AEEA00D854B8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EA521E682217AEEA00D854B8 /* Glow.app */,
+				EA521E7C2217AEEB00D854B8 /* GlowTests.xctest */,
+				EA521E872217AEEB00D854B8 /* GlowUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EA521E6A2217AEEA00D854B8 /* Glow */ = {
+			isa = PBXGroup;
+			children = (
+				EA521E6B2217AEEA00D854B8 /* AppDelegate.swift */,
+				EA521E6D2217AEEA00D854B8 /* ViewController.swift */,
+				EA521E6F2217AEEA00D854B8 /* Main.storyboard */,
+				EA521E722217AEEB00D854B8 /* Assets.xcassets */,
+				EA521E742217AEEB00D854B8 /* LaunchScreen.storyboard */,
+				EA521E772217AEEB00D854B8 /* Info.plist */,
+			);
+			path = Glow;
+			sourceTree = "<group>";
+		};
+		EA521E7F2217AEEB00D854B8 /* GlowTests */ = {
+			isa = PBXGroup;
+			children = (
+				EA521E802217AEEB00D854B8 /* GlowTests.swift */,
+				EA521E822217AEEB00D854B8 /* Info.plist */,
+			);
+			path = GlowTests;
+			sourceTree = "<group>";
+		};
+		EA521E8A2217AEEB00D854B8 /* GlowUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EA521E8B2217AEEB00D854B8 /* GlowUITests.swift */,
+				EA521E8D2217AEEB00D854B8 /* Info.plist */,
+			);
+			path = GlowUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EA521E672217AEEA00D854B8 /* Glow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA521E902217AEEB00D854B8 /* Build configuration list for PBXNativeTarget "Glow" */;
+			buildPhases = (
+				EA521E642217AEEA00D854B8 /* Sources */,
+				EA521E652217AEEA00D854B8 /* Frameworks */,
+				EA521E662217AEEA00D854B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Glow;
+			productName = Glow;
+			productReference = EA521E682217AEEA00D854B8 /* Glow.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EA521E7B2217AEEB00D854B8 /* GlowTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA521E932217AEEB00D854B8 /* Build configuration list for PBXNativeTarget "GlowTests" */;
+			buildPhases = (
+				EA521E782217AEEB00D854B8 /* Sources */,
+				EA521E792217AEEB00D854B8 /* Frameworks */,
+				EA521E7A2217AEEB00D854B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EA521E7E2217AEEB00D854B8 /* PBXTargetDependency */,
+			);
+			name = GlowTests;
+			productName = GlowTests;
+			productReference = EA521E7C2217AEEB00D854B8 /* GlowTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EA521E862217AEEB00D854B8 /* GlowUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA521E962217AEEB00D854B8 /* Build configuration list for PBXNativeTarget "GlowUITests" */;
+			buildPhases = (
+				EA521E832217AEEB00D854B8 /* Sources */,
+				EA521E842217AEEB00D854B8 /* Frameworks */,
+				EA521E852217AEEB00D854B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EA521E892217AEEB00D854B8 /* PBXTargetDependency */,
+			);
+			name = GlowUITests;
+			productName = GlowUITests;
+			productReference = EA521E872217AEEB00D854B8 /* GlowUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EA521E602217AEEA00D854B8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Kevin J Nguyen";
+				TargetAttributes = {
+					EA521E672217AEEA00D854B8 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					EA521E7B2217AEEB00D854B8 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = EA521E672217AEEA00D854B8;
+					};
+					EA521E862217AEEB00D854B8 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = EA521E672217AEEA00D854B8;
+					};
+				};
+			};
+			buildConfigurationList = EA521E632217AEEA00D854B8 /* Build configuration list for PBXProject "Glow" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EA521E5F2217AEEA00D854B8;
+			productRefGroup = EA521E692217AEEA00D854B8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EA521E672217AEEA00D854B8 /* Glow */,
+				EA521E7B2217AEEB00D854B8 /* GlowTests */,
+				EA521E862217AEEB00D854B8 /* GlowUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EA521E662217AEEA00D854B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA521E762217AEEB00D854B8 /* LaunchScreen.storyboard in Resources */,
+				EA521E732217AEEB00D854B8 /* Assets.xcassets in Resources */,
+				EA521E712217AEEA00D854B8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA521E7A2217AEEB00D854B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA521E852217AEEB00D854B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EA521E642217AEEA00D854B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA521E6E2217AEEA00D854B8 /* ViewController.swift in Sources */,
+				EA521E6C2217AEEA00D854B8 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA521E782217AEEB00D854B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA521E812217AEEB00D854B8 /* GlowTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA521E832217AEEB00D854B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA521E8C2217AEEB00D854B8 /* GlowUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EA521E7E2217AEEB00D854B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EA521E672217AEEA00D854B8 /* Glow */;
+			targetProxy = EA521E7D2217AEEB00D854B8 /* PBXContainerItemProxy */;
+		};
+		EA521E892217AEEB00D854B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EA521E672217AEEA00D854B8 /* Glow */;
+			targetProxy = EA521E882217AEEB00D854B8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EA521E6F2217AEEA00D854B8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA521E702217AEEA00D854B8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EA521E742217AEEB00D854B8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA521E752217AEEB00D854B8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EA521E8E2217AEEB00D854B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EA521E8F2217AEEB00D854B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EA521E912217AEEB00D854B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VTH3535D42;
+				INFOPLIST_FILE = Glow/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kevinjnguyen.glow.Glow;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EA521E922217AEEB00D854B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VTH3535D42;
+				INFOPLIST_FILE = Glow/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kevinjnguyen.glow.Glow;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EA521E942217AEEB00D854B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GlowTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kevinjnguyen.glow.GlowTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Glow.app/Glow";
+			};
+			name = Debug;
+		};
+		EA521E952217AEEB00D854B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GlowTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kevinjnguyen.glow.GlowTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Glow.app/Glow";
+			};
+			name = Release;
+		};
+		EA521E972217AEEB00D854B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GlowUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kevinjnguyen.glow.GlowUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Glow;
+			};
+			name = Debug;
+		};
+		EA521E982217AEEB00D854B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GlowUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kevinjnguyen.glow.GlowUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Glow;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EA521E632217AEEA00D854B8 /* Build configuration list for PBXProject "Glow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA521E8E2217AEEB00D854B8 /* Debug */,
+				EA521E8F2217AEEB00D854B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA521E902217AEEB00D854B8 /* Build configuration list for PBXNativeTarget "Glow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA521E912217AEEB00D854B8 /* Debug */,
+				EA521E922217AEEB00D854B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA521E932217AEEB00D854B8 /* Build configuration list for PBXNativeTarget "GlowTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA521E942217AEEB00D854B8 /* Debug */,
+				EA521E952217AEEB00D854B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA521E962217AEEB00D854B8 /* Build configuration list for PBXNativeTarget "GlowUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA521E972217AEEB00D854B8 /* Debug */,
+				EA521E982217AEEB00D854B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EA521E602217AEEA00D854B8 /* Project object */;
+}
