@@ -458,12 +458,11 @@ def num_9(position):
     return "9"
 
 def draw_time():
-	now = datetime.datetime.now()
-	hour = (now.hour)%12
-	minute_str = now.strftime("%M")
-
+	# now = datetime.datetime.now()
+	# hour = (now.hour) % 12
+	# minute_str = now.strftime("%M")
     draw_num_0(0)
-
+    return ""
 	# # draw the hours
 	# if(hour == 1):
 	# 	draw_num_0(0)
