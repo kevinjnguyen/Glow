@@ -102,6 +102,10 @@ def serve():
     server.start()
     laser_on()
     recenter()
+
+    move_servos(4, 4)
+
+
     try:
         while True:
             time.sleep(_ONE_DAY_IN_SECONDS)
