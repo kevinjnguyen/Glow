@@ -12,12 +12,12 @@ _ONE_DAY_IN_SECONDS = 60 * 60 * 24
 class Greeter(grpc_pb2_grpc.GlowServicer):
 
     def TestPointReceiving(self, request, context) :
-        print('Received: (' + str(request.x) + ', ' + str(request.y) + ')')
+        print('(' + str(request.x1) + ', ' + str(request.y1) + ') ----> ' + '(' + str(request.x2) + ', ' + str(request.y2))
         return grpc_pb2.GlowReply(message='Receieved!')
 
     def LotsOfPoints(self, request_iterator, context):
         for new_point in request_iterator:
-            print('Received: (' + str(new_point.x) + ', ' + str(new_point.y) + ')')
+            print('(' + str(new_point.x1) + ', ' + str(new_point.y1) + ') ----> ' + '(' + str(new_point.x2) + ', ' + str(new_point.y2))
         return grpc_pb2.GlowReply(message='Receieved!')
 
 
