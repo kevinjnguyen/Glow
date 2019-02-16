@@ -62,7 +62,6 @@ def goToFirstPosit():
 	req = {}
 	req['x2'] = (-7*unit())
 	req['y2'] = (5*unit())
-    #return ((-7*.9875),(5*.9875))
     return req
 
 def goToSecondPosit():
@@ -632,7 +631,7 @@ def serve():
     time.sleep(0.5)
 
     draw_time()
-    
+
     try:
         while True:
             polling()
