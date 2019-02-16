@@ -36,10 +36,10 @@ def move_servos(top_angle, bottom_angle):
   top_servo.ChangeDutyCycle(top_angle)
   #time.sleep(0.5)
 
-toggle_relay_status = True
-GPIO.output(31, toggle_relay_status)
-# try:
-#   while True:
+# toggle_relay_status = True
+# GPIO.output(31, toggle_relay_status)
+try:
+  while True:
 #     toggle_relay_status = True
 #     GPIO.output(31, toggle_relay_status)
 #     # temp = input("Toggle: " )
@@ -47,12 +47,12 @@ GPIO.output(31, toggle_relay_status)
 #     # GPIO.output(31, toggle_relay_status)
 #     # temp = input("Toggle: " )
     
-#     # top_angle = input("Desired top angle?: ")
-#     # bottom_angle = input("Desired bottom angle?: ")
-#     # move_servos(float(top_angle), float(bottom_angle))
-# except KeyboardInterrupt:
-#   top_servo.stop()
-#   bottom_servo.stop()
-#   GPIO.cleanup()
+    top_angle = input("Desired top angle?: ")
+    bottom_angle = input("Desired bottom angle?: ")
+    move_servos(float(top_angle), float(bottom_angle))
+except KeyboardInterrupt:
+  top_servo.stop()
+  bottom_servo.stop()
+  GPIO.cleanup()
 
 
