@@ -20,6 +20,82 @@ GPIO.setup(33, GPIO.OUT)
 bottom_servo = GPIO.PWM(12, 50)
 top_servo = GPIO.PWM(33, 50)
 
+
+# -------------clockwork------------------- dorick branch BEGIN
+
+#---definitions
+def unit():
+    return .9875
+    # 1 unit is .9875
+
+def down_length():
+    return -5*unit()
+    #add coordinate to move down
+
+def up_length():
+    return 5*.9875
+    #give coordinate to move up
+
+def rigth_width():
+    return 3*.9875
+    #give coordinate to move up
+
+def left_width():
+    return -3*.9875
+    #give coordinate to move up
+
+
+
+
+#--- Returning our starting positions that we would start at
+def goToFirstPosit():
+    return ((-7*.9875),(5*.9875))
+
+def goToSecondPosit():
+    return ((-3*.9875),(5*.9875))
+
+def goToThirdPosit():
+    return ((.9875),(5*.9875))
+
+def goToLastPosit():
+    return ((5*.9875),(5*.9875))
+
+def num_0():
+    # grab corner start location
+    grab()
+
+    laser_on()
+    # yolo random thing method ill explain.
+    move_method(0, down_length())
+    move_method(0, down_length())
+    move_method(0, rigth_width())
+    move_method(0, up_length())
+    move_method(0, up_length())
+    move_method(0, left_width())
+    laser_off()
+    return "0"
+
+def num_1():
+    # grab corner start location
+    grab()
+    #yolo random thing method
+    move_method(rigth_width,(5*.9875))
+    laser_on()
+    move_method(0,down_length())
+    move_method(0,down_length())
+    laser_off()
+    return "1"
+
+def num_2():
+    grab()
+    #yolo random thing method
+    move_method(rigth_width,(5*.9875))
+
+def clockwork():
+
+
+# -------------clockwork------------------- dorick branch END
+
 def laser_on():
     GPIO.output(31, True)
 
