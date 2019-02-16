@@ -464,7 +464,6 @@ def draw_time():
 	# now = datetime.datetime.now()
 	# hour = (now.hour) % 12
 	# minute_str = now.strftime("%M")
-    laser_off()
     draw_num_0(0)
     return ""
 	# # draw the hours
@@ -623,7 +622,6 @@ def serve():
     grpc_pb2_grpc.add_GlowServicer_to_server(Greeter(), server)
     server.add_insecure_port('[::]:50051')
     server.start()
-    laser_on()
     recenter()
 
     bottom_servo.start(2)
