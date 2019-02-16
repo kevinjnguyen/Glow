@@ -72,7 +72,7 @@ def goToSecondPosit():
 
 def goToThirdPosit():
     req = {}
-    req['x2'] = *get_unit()
+    req['x2'] = get_unit()
     req['y2'] = 5*get_unit()
     return req
 
