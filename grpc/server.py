@@ -100,7 +100,6 @@ def clockwork():
 
 
 # -------------clockwork------------------- dorick branch END
->>>>>>> Changes added to make methods for our clock display
 
 def laser_on():
     GPIO.output(31, True)
