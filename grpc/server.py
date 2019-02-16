@@ -72,10 +72,13 @@ class Greeter(grpc_pb2_grpc.GlowServicer):
 
         print('--- PWM Pan ---')
         pan_pwm = angle_to_pwm_pan(pan_angle)
+        print(pan_pwm)
         print('--- End PWM Pan ---')
 
         print('--- PWM Tilt ---')
         tilt_pwm = angle_to_pwm_tilt(tilt_angle)
+        print(tilt_pwm)
+
         print('--- End PWM Tilt ---')
         move_servos(pan_pwm, tilt_pwm)
 
