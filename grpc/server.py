@@ -26,6 +26,20 @@ def laser_on():
 def laser_off():
     GPIO.output(31, False)
 
+def recenter():
+    move_servos(0, 0)
+
+def angle_to_pwm_pan(angle):
+    return 7.75 + (angle * -2.47)
+
+def angle_to_pwm_tilt(angle):
+    return 7.75 + (angle * -2.47)
+
+def move_servos(pan_angle, tilt_angle):
+    bottom_servo.ChangeDutyCycle(angle_to_pwm_pan(pan_angle))
+    top_servo.ChangeDutyCycle(angle_to_pwm_pan(tilt_angle))
+    return ""
+
 class Greeter(grpc_pb2_grpc.GlowServicer):
 
     mutex = Lock()
@@ -42,24 +56,10 @@ class Greeter(grpc_pb2_grpc.GlowServicer):
         tilt_angle = (math.pi / 2) - math.acos(request.y2 / math.sqrt( request.x2 ** 2 + request.y2 **2 + 9.75**2))
         return pan_angle, tilt_angle
 
-    def move_servos(self, pan_angle, tilt_angle):
-        bottom_servo.ChangeDutyCycle(self.angle_to_pwm_pan(pan_angle))
-        top_servo.ChangeDutyCycle(self.angle_to_pwm_pan(tilt_angle))
-        return ""
-
-    def angle_to_pwm_pan(self, angle):
-        return 7.75 + (angle * -2.47)
-
-    def angle_to_pwm_tilt(self, angle):
-        return 7.75 + (angle * -2.47)
-
-    def recenter(self):
-        self.move_servos(0, 0)
-
     def TestPointReceiving(self, request, context):
         box_scaled = self.scale_ipad_to_box(request)
         pan_angle, tilt_angle = self.scale_box_to_pan_tilt(box_scaled)
-        self.move_servos(pan_angle, tilt_angle)
+        move_servos(pan_angle, tilt_angle)
 
         # self.mutex.acquire()
         # try:
@@ -80,6 +80,7 @@ def serve():
     server.add_insecure_port('[::]:50051')
     server.start()
     laser_on()
+    recenter()
     try:
         while True:
             time.sleep(_ONE_DAY_IN_SECONDS)
