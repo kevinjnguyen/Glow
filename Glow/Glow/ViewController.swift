@@ -24,6 +24,9 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
+    @IBAction func resetTouchBegan(_ sender: Any) {
+        mainImageView.image = nil
+    }
     func drawLine(from fromPoint: CGPoint, to toPoint: CGPoint) {
         UIGraphicsBeginImageContext(view.frame.size)
         guard let context = UIGraphicsGetCurrentContext() else {

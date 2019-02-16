@@ -22,7 +22,10 @@
                                 <rect key="frame" x="20" y="34" width="121" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Cancel"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetTouchBegan:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qWZ-Jp-Jq3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YKC-I6-IeB">
                                 <rect key="frame" x="627" y="34" width="121" height="63"/>
@@ -30,12 +33,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Start"/>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HjT-1e-40U" userLabel="MainImageView">
-                                <rect key="frame" x="20" y="105" width="728" height="899"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IGA-AQ-zzi" userLabel="MainImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eZd-Xu-rqr" userLabel="TempImageView">
-                                <rect key="frame" x="20" y="105" width="728" height="899"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P9K-lr-8yL" userLabel="TempImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -43,8 +46,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="mainImageView" destination="HjT-1e-40U" id="pts-co-fTz"/>
-                        <outlet property="tempImageView" destination="eZd-Xu-rqr" id="SH3-GO-cDP"/>
+                        <outlet property="mainImageView" destination="IGA-AQ-zzi" id="6go-Rh-Pps"/>
+                        <outlet property="tempImageView" destination="P9K-lr-8yL" id="Tek-MI-SqK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
