@@ -25,6 +25,7 @@ top_servo = GPIO.PWM(33, 50)
 mutex = Lock()
 
 queue = deque()
+current_line = 0
 
 def laser_on():
     GPIO.output(31, True)
@@ -84,13 +85,23 @@ def processData():
         if len(queue) > 0:
             print('Should be moving...')
             request = queue.popleft()
+
+            did_turn_laser_off = False
+            if request.line != current_line:
+                laser_off()
+                current_line = request.line
+                did_turn_laser_off = True
+            else:
+                laser_on()
+            
             box_scaled = scale_ipad_to_box(request)
             pan_angle, tilt_angle = scale_box_to_pan_tilt(box_scaled)
             pan_pwm = angle_to_pwm_pan(pan_angle)
             tilt_pwm = angle_to_pwm_tilt(tilt_angle)
-            # pan_pwm = angle_to_pwm_pan(0.0)
-            # tilt_pwm = angle_to_pwm_tilt(0.785398)
             move_servos(pan_pwm, tilt_pwm)
+
+            if (did_turn_laser_off):
+                time.sleep(0.5)
     finally:
         mutex.release()
     return 'Done'
