@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftGRPC
 
 class ViewController: UIViewController {
 
@@ -19,12 +20,16 @@ class ViewController: UIViewController {
     var opacity: CGFloat = 1.0
     var swiped = false
     
+    let glow_rep = GlowRepository.shared
+    
     var points: [(CGPoint, CGPoint)] = []
     
     var isSending: Bool = false
+    var info = Glow_GlowReply()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -35,7 +40,12 @@ class ViewController: UIViewController {
     
     @IBAction func sendTouchBegan(_ sender: Any) {
         self.isSending = true;
-        
+        do {
+            try glow_rep.tryTest()
+        } catch {
+            
+            print(error)
+        }
     }
     
     func drawLine(from fromPoint: CGPoint, to toPoint: CGPoint) {

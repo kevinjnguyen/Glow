@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D82ECF82551A03EF18F4E62 /* Pods_GlowTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDC46DD02618F478CC52936 /* Pods_GlowTests.framework */; };
+		64CF96FFBC78D31823236B66 /* Pods_Glow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E07F04A2AC96871742BB89 /* Pods_Glow.framework */; };
+		D621A68D072505B51DE6DF73 /* Pods_GlowUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D449A66231D9B1002A376CE /* Pods_GlowUITests.framework */; };
 		EA521E6C2217AEEA00D854B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA521E6B2217AEEA00D854B8 /* AppDelegate.swift */; };
 		EA521E6E2217AEEA00D854B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA521E6D2217AEEA00D854B8 /* ViewController.swift */; };
 		EA521E712217AEEA00D854B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA521E6F2217AEEA00D854B8 /* Main.storyboard */; };
@@ -14,6 +17,9 @@
 		EA521E762217AEEB00D854B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA521E742217AEEB00D854B8 /* LaunchScreen.storyboard */; };
 		EA521E812217AEEB00D854B8 /* GlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA521E802217AEEB00D854B8 /* GlowTests.swift */; };
 		EA521E8C2217AEEB00D854B8 /* GlowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA521E8B2217AEEB00D854B8 /* GlowUITests.swift */; };
+		EAD335D32217FCD40072914B /* grpc.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD335D12217FCD40072914B /* grpc.pb.swift */; };
+		EAD335D42217FCD40072914B /* grpc.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD335D22217FCD40072914B /* grpc.grpc.swift */; };
+		EAD335D62217FCEF0072914B /* GlowRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD335D52217FCEF0072914B /* GlowRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +40,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		37F010D05BBE48F3957E8973 /* Pods-Glow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Glow.debug.xcconfig"; path = "Target Support Files/Pods-Glow/Pods-Glow.debug.xcconfig"; sourceTree = "<group>"; };
+		6075A14B85D305BBC0CC3474 /* Pods-GlowTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlowTests.release.xcconfig"; path = "Target Support Files/Pods-GlowTests/Pods-GlowTests.release.xcconfig"; sourceTree = "<group>"; };
+		6A628CF38961DFA3635654D6 /* Pods-GlowUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlowUITests.debug.xcconfig"; path = "Target Support Files/Pods-GlowUITests/Pods-GlowUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7D449A66231D9B1002A376CE /* Pods_GlowUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GlowUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		97F6489B370E4099561899AE /* Pods-Glow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Glow.release.xcconfig"; path = "Target Support Files/Pods-Glow/Pods-Glow.release.xcconfig"; sourceTree = "<group>"; };
+		9C09305B02245BABBE4540D7 /* Pods-GlowUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlowUITests.release.xcconfig"; path = "Target Support Files/Pods-GlowUITests/Pods-GlowUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B0BC49172100EC3EFACB7334 /* Pods-GlowTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlowTests.debug.xcconfig"; path = "Target Support Files/Pods-GlowTests/Pods-GlowTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DEDC46DD02618F478CC52936 /* Pods_GlowTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GlowTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7E07F04A2AC96871742BB89 /* Pods_Glow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Glow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA521E682217AEEA00D854B8 /* Glow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Glow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA521E6B2217AEEA00D854B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA521E6D2217AEEA00D854B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +62,9 @@
 		EA521E872217AEEB00D854B8 /* GlowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GlowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA521E8B2217AEEB00D854B8 /* GlowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowUITests.swift; sourceTree = "<group>"; };
 		EA521E8D2217AEEB00D854B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAD335D12217FCD40072914B /* grpc.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = grpc.pb.swift; sourceTree = "<group>"; };
+		EAD335D22217FCD40072914B /* grpc.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = grpc.grpc.swift; sourceTree = "<group>"; };
+		EAD335D52217FCEF0072914B /* GlowRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64CF96FFBC78D31823236B66 /* Pods_Glow.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D82ECF82551A03EF18F4E62 /* Pods_GlowTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +88,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D621A68D072505B51DE6DF73 /* Pods_GlowUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BB72AFF011142584C9F2BC4B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				37F010D05BBE48F3957E8973 /* Pods-Glow.debug.xcconfig */,
+				97F6489B370E4099561899AE /* Pods-Glow.release.xcconfig */,
+				B0BC49172100EC3EFACB7334 /* Pods-GlowTests.debug.xcconfig */,
+				6075A14B85D305BBC0CC3474 /* Pods-GlowTests.release.xcconfig */,
+				6A628CF38961DFA3635654D6 /* Pods-GlowUITests.debug.xcconfig */,
+				9C09305B02245BABBE4540D7 /* Pods-GlowUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E196177A423B0F69C2332ABB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E7E07F04A2AC96871742BB89 /* Pods_Glow.framework */,
+				DEDC46DD02618F478CC52936 /* Pods_GlowTests.framework */,
+				7D449A66231D9B1002A376CE /* Pods_GlowUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EA521E5F2217AEEA00D854B8 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +125,8 @@
 				EA521E7F2217AEEB00D854B8 /* GlowTests */,
 				EA521E8A2217AEEB00D854B8 /* GlowUITests */,
 				EA521E692217AEEA00D854B8 /* Products */,
+				BB72AFF011142584C9F2BC4B /* Pods */,
+				E196177A423B0F69C2332ABB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +143,15 @@
 		EA521E6A2217AEEA00D854B8 /* Glow */ = {
 			isa = PBXGroup;
 			children = (
+				EAD335D22217FCD40072914B /* grpc.grpc.swift */,
+				EAD335D12217FCD40072914B /* grpc.pb.swift */,
 				EA521E6B2217AEEA00D854B8 /* AppDelegate.swift */,
 				EA521E6D2217AEEA00D854B8 /* ViewController.swift */,
 				EA521E6F2217AEEA00D854B8 /* Main.storyboard */,
 				EA521E722217AEEB00D854B8 /* Assets.xcassets */,
 				EA521E742217AEEB00D854B8 /* LaunchScreen.storyboard */,
 				EA521E772217AEEB00D854B8 /* Info.plist */,
+				EAD335D52217FCEF0072914B /* GlowRepository.swift */,
 			);
 			path = Glow;
 			sourceTree = "<group>";
@@ -132,9 +181,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EA521E902217AEEB00D854B8 /* Build configuration list for PBXNativeTarget "Glow" */;
 			buildPhases = (
+				0F0D285062ABE6E285D11D29 /* [CP] Check Pods Manifest.lock */,
 				EA521E642217AEEA00D854B8 /* Sources */,
 				EA521E652217AEEA00D854B8 /* Frameworks */,
 				EA521E662217AEEA00D854B8 /* Resources */,
+				A31E35EDCC5225B392B9912C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +200,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EA521E932217AEEB00D854B8 /* Build configuration list for PBXNativeTarget "GlowTests" */;
 			buildPhases = (
+				93D6F25449AE8165FE6A5AFB /* [CP] Check Pods Manifest.lock */,
 				EA521E782217AEEB00D854B8 /* Sources */,
 				EA521E792217AEEB00D854B8 /* Frameworks */,
 				EA521E7A2217AEEB00D854B8 /* Resources */,
@@ -167,6 +219,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EA521E962217AEEB00D854B8 /* Build configuration list for PBXNativeTarget "GlowUITests" */;
 			buildPhases = (
+				65649EF81A9E2700522F86BC /* [CP] Check Pods Manifest.lock */,
 				EA521E832217AEEB00D854B8 /* Sources */,
 				EA521E842217AEEB00D854B8 /* Frameworks */,
 				EA521E852217AEEB00D854B8 /* Resources */,
@@ -251,12 +304,114 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0F0D285062ABE6E285D11D29 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Glow-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		65649EF81A9E2700522F86BC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GlowUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93D6F25449AE8165FE6A5AFB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GlowTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A31E35EDCC5225B392B9912C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Glow/Pods-Glow-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftGRPC/SwiftGRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftProtobuf/SwiftProtobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftGRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftProtobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Glow/Pods-Glow-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EA521E642217AEEA00D854B8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAD335D62217FCEF0072914B /* GlowRepository.swift in Sources */,
+				EAD335D42217FCD40072914B /* grpc.grpc.swift in Sources */,
 				EA521E6E2217AEEA00D854B8 /* ViewController.swift in Sources */,
+				EAD335D32217FCD40072914B /* grpc.pb.swift in Sources */,
 				EA521E6C2217AEEA00D854B8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,6 +585,7 @@
 		};
 		EA521E912217AEEB00D854B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37F010D05BBE48F3957E8973 /* Pods-Glow.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -448,6 +604,7 @@
 		};
 		EA521E922217AEEB00D854B8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97F6489B370E4099561899AE /* Pods-Glow.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -466,6 +623,7 @@
 		};
 		EA521E942217AEEB00D854B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0BC49172100EC3EFACB7334 /* Pods-GlowTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -486,6 +644,7 @@
 		};
 		EA521E952217AEEB00D854B8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6075A14B85D305BBC0CC3474 /* Pods-GlowTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -506,6 +665,7 @@
 		};
 		EA521E972217AEEB00D854B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A628CF38961DFA3635654D6 /* Pods-GlowUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -525,6 +685,7 @@
 		};
 		EA521E982217AEEB00D854B8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C09305B02245BABBE4540D7 /* Pods-GlowUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
