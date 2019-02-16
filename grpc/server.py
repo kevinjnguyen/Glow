@@ -47,6 +47,15 @@ class Greeter(grpc_pb2_grpc.GlowServicer):
     def angle_to_pwm_tilt(self, angle):
         return 7.75 + (angle * -2.47)
 
+    def recenter(self):
+        self.move_servos(0, 0)
+
+    def laser_on(self):
+        GPIO.output(31, True)
+
+    def laser_off(self):
+        GPIO.output(31, False)
+
     def TestPointReceiving(self, request, context):
         box_scaled = self.scale_ipad_to_box(request)
         pan_angle, tilt_angle = self.scale_box_to_pan_tilt(box_scaled)
@@ -70,10 +79,12 @@ def serve():
     grpc_pb2_grpc.add_GlowServicer_to_server(Greeter(), server)
     server.add_insecure_port('[::]:50051')
     server.start()
+    server.laser_on()
     try:
         while True:
             time.sleep(_ONE_DAY_IN_SECONDS)
     except KeyboardInterrupt:
+        server.laser_off()
         server.stop(0)
 
 
