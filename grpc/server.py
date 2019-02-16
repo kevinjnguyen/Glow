@@ -86,6 +86,9 @@ def serve():
             time.sleep(_ONE_DAY_IN_SECONDS)
     except KeyboardInterrupt:
         laser_off()
+        top_servo.stop()
+        bottom_servo.stop()
+        GPIO.cleanup()
         server.stop(0)
 
 
