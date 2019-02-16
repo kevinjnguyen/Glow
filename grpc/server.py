@@ -15,6 +15,7 @@ from collections import deque
 class current_line:
     def __init__(self, current_line):
         self.current_line = current_line
+        self.did_start_new_line = False
 
 _ONE_DAY_IN_SECONDS = 60 * 60 * 24
 GPIO.setmode(GPIO.BOARD)
@@ -91,11 +92,10 @@ def processData():
             print('Should be moving...')
             request = queue.popleft()
 
-            did_turn_laser_off = False
             if request.line != line.current_line:
                 laser_off()
                 line.current_line = request.line
-                did_turn_laser_off = True
+                line.did_start_new_line = True
             else:
                 laser_on()
             
@@ -105,8 +105,6 @@ def processData():
             tilt_pwm = angle_to_pwm_tilt(tilt_angle)
             move_servos(pan_pwm, tilt_pwm)
 
-            if (did_turn_laser_off):
-                time.sleep(0.5)
     finally:
         mutex.release()
     return 'Done'
@@ -140,6 +138,8 @@ def polling():
     while True:
         p = Thread(target = processData)
         p.start()
+        if (line.did_start_new_line):
+            time.sleep(0.1)
         
 
 if __name__ == '__main__':
