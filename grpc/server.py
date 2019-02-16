@@ -35,9 +35,9 @@ def angle_to_pwm_pan(angle):
 def angle_to_pwm_tilt(angle):
     return 7.75 + (angle * -2.47)
 
-def move_servos(pan_angle, tilt_angle):
-    bottom_servo.ChangeDutyCycle(angle_to_pwm_pan(pan_angle))
-    top_servo.ChangeDutyCycle(angle_to_pwm_pan(tilt_angle))
+def move_servos(pan_pwm, tilt_pwm):
+    bottom_servo.ChangeDutyCycle(pan_pwm)
+    top_servo.ChangeDutyCycle(tilt_pwm)
     return ""
 
 class Greeter(grpc_pb2_grpc.GlowServicer):
