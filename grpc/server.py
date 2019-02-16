@@ -70,11 +70,9 @@ class Greeter(grpc_pb2_grpc.GlowServicer):
 
     def TestPointReceiving(self, request, context):
         mutex.acquire()
-        print('Server: Acquired the lock.')
         try:
             queue.append(request)
         finally:
-            print('Server: Released the lock.')
             mutex.release()
         return grpc_pb2.GlowReply(message='Receieved!')
 
@@ -89,7 +87,6 @@ def processData():
     global current_line
     try:
         if len(queue) > 0:
-            print('Should be moving...')
             request = queue.popleft()
 
             if request.line != line.current_line:
