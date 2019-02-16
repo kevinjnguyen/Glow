@@ -113,7 +113,6 @@ def serve():
 
 def polling():
     while True:
-        print('Starting polling thread..')
         p = Thread(target = processData)
         p.start()
         
