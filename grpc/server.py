@@ -108,6 +108,7 @@ def serve():
 
     try:
         while True:
+            polling()
             time.sleep(_ONE_DAY_IN_SECONDS)
         
     except KeyboardInterrupt:
@@ -126,6 +127,5 @@ def polling():
 
 if __name__ == '__main__':
     logging.basicConfig()
-    polling()
     serve()
 
