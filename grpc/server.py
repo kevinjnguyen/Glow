@@ -45,10 +45,10 @@ class Greeter(grpc_pb2_grpc.GlowServicer):
     mutex = Lock()
 
     def scale_ipad_to_box(self, request):
-        request.x1 = (request.x1 - 384.0) / 39.38
-        request.x2 = (request.x2 - 384.0) / 39.38
-        request.y1 = (request.y1 - 640.0) / -39.38
-        request.y2 = (request.y2 - 640.0) / -39.38
+        request.x1 = (request.x1/10.0 - 384.0) / 39.38
+        request.x2 = (request.x2/10.0 - 384.0) / 39.38
+        request.y1 = (request.y1/10.0 - 640.0) / -39.38
+        request.y2 = (request.y2/10.0 - 640.0) / -39.38
         return request
 
     def scale_box_to_pan_tilt(self, request):
@@ -57,14 +57,14 @@ class Greeter(grpc_pb2_grpc.GlowServicer):
         return pan_angle, tilt_angle
 
     def TestPointReceiving(self, request, context):
-        # box_scaled = self.scale_ipad_to_box(request)
-        # pan_angle, tilt_angle = self.scale_box_to_pan_tilt(box_scaled)
+        box_scaled = self.scale_ipad_to_box(request)
+        pan_angle, tilt_angle = self.scale_box_to_pan_tilt(box_scaled)
 
-        # move_servos(angle_to_pwm_pan(pan_angle), angle_to_pwm_tilt(tilt_angle))
+        move_servos(angle_to_pwm_pan(pan_angle), angle_to_pwm_tilt(tilt_angle))
 
         # self.mutex.acquire()
         # try:
-        print('(' + str(request.x1) + ', ' + str(request.y1) + ') ----> ' + '(' + str(request.x2) + ', ' + str(request.y2) + ')')
+        # print('(' + str(request.x1) + ', ' + str(request.y1) + ') ----> ' + '(' + str(request.x2) + ', ' + str(request.y2) + ')')
         # finally:
         #     self.mutex.release()
         return grpc_pb2.GlowReply(message='Receieved!')
