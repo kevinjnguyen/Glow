@@ -32,7 +32,7 @@ time.sleep(0.5)
 
 def move_servos(top_angle, bottom_angle):
   bottom_servo.ChangeDutyCycle(bottom_angle)
-  #time.sleep(0.5)
+  # time.sleep(0.5)
   top_servo.ChangeDutyCycle(top_angle)
   #time.sleep(0.5)
 

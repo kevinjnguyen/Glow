@@ -1,6 +1,7 @@
 from concurrent import futures
 from threading import Thread, Lock
 
+import RPi.GPIO as GPIO
 import time
 import logging
 import math
@@ -14,6 +15,14 @@ _ONE_DAY_IN_SECONDS = 60 * 60 * 24
 class Greeter(grpc_pb2_grpc.GlowServicer):
 
     mutex = Lock()
+    GPIO.setmode(GPIO.BOARD)
+
+    GPIO.setup(12, GPIO.OUT)
+    GPIO.setup(31, GPIO.OUT)
+    GPIO.setup(33, GPIO.OUT)
+
+    bottom_servo = GPIO.PWM(12, 50)
+    top_servo = GPIO.PWM(33, 50)
 
     def scale_ipad_to_box(self, request):
         request.x1 = (request.x1 - 384.0) / 39.38
@@ -28,6 +37,8 @@ class Greeter(grpc_pb2_grpc.GlowServicer):
         return pan_angle, tilt_angle
 
     def move_servos(self, pan_angle, tilt_angle):
+        self.bottom_servo.ChangeDutyCycle(pan_angle)
+        self.top_servo.ChangeDutyCycle(tilt_angle)
         return ""
 
     def TestPointReceiving(self, request, context):
