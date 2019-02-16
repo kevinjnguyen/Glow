@@ -42,10 +42,12 @@ def recenter():
     move_servos(0, 0)
 
 def angle_to_pwm_pan(angle):
-    return 7.75 + (angle * -2.47)
+    return 0.225 + (0.975/0.7854) * angle
+    # return 7.75 + (angle * -2.47)
 
 def angle_to_pwm_tilt(angle):
-    return 7.75 + (angle * -2.47)
+    return 0.4 + (1.05 / 0.7854) * angle
+    # return 7.75 + (angle * -2.47)
 
 def move_servos(pan_pwm, tilt_pwm):
     bottom_servo.ChangeDutyCycle(pan_pwm)
