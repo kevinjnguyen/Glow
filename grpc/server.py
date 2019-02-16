@@ -64,9 +64,11 @@ class Greeter(grpc_pb2_grpc.GlowServicer):
 
     def TestPointReceiving(self, request, context):
         mutex.acquire()
+        print('Server: Acquired the lock.')
         try:
             queue.append(request)
         finally:
+            print('Server: Released the lock.')
             mutex.release()
         return grpc_pb2.GlowReply(message='Receieved!')
 
@@ -79,7 +81,6 @@ class Greeter(grpc_pb2_grpc.GlowServicer):
 def processData():
     mutex.acquire()
     try:
-        print('PD: Acquired the lock.')
         if len(queue) > 0:
             request = queue.popleft()
             box_scaled = scale_ipad_to_box(request)
@@ -88,7 +89,6 @@ def processData():
             tilt_pwm = angle_to_pwm_tilt(tilt_angle)
             move_servos(pan_pwm, tilt_pwm)
     finally:
-        print('PD: Released the lock.')
         mutex.release()
     return 'Done'
 
