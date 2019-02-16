@@ -12,6 +12,10 @@ import grpc_pb2_grpc
 
 from collections import deque
 
+class current_line:
+    def __init__(self, current_line):
+        self.current_line = current_line
+
 _ONE_DAY_IN_SECONDS = 60 * 60 * 24
 GPIO.setmode(GPIO.BOARD)
 
@@ -25,7 +29,7 @@ top_servo = GPIO.PWM(33, 50)
 mutex = Lock()
 
 queue = deque()
-current_line = 0
+line = current_line(0)
 
 def laser_on():
     GPIO.output(31, True)
@@ -88,9 +92,9 @@ def processData():
             request = queue.popleft()
 
             did_turn_laser_off = False
-            if request.line != current_line:
+            if request.line != line.current_line:
                 laser_off()
-                current_line = request.line
+                line.current_line = request.line
                 did_turn_laser_off = True
             else:
                 laser_on()
