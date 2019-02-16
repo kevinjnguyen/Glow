@@ -78,6 +78,11 @@ def serve():
     server.start()
     laser_on()
     recenter()
+    
+    bottom_servo.start(2)
+    time.sleep(0.5)
+    top_servo.start(2)
+    time.sleep(0.5)
 
     try:
         while True:
