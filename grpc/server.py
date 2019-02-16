@@ -1,8 +1,9 @@
 from concurrent import futures
-import time
 from threading import Thread, Lock
-import logging
 
+import time
+import logging
+import math
 import grpc
 
 import grpc_pb2
@@ -22,17 +23,23 @@ class Greeter(grpc_pb2_grpc.GlowServicer):
         return request
 
     def scale_box_to_pan_tilt(self, request):
-        return request
+        pan_angle = math.atan(request.x2 / 9.75)
+        tilt_angle = (math.pi / 2) - math.acos(request.y2 / math.sqrt( request.x2 ** 2 + request.y2 **2 + 9.75**2))
+        return pan_angle, tilt_angle
+
+    def move_servos(self, pan_angle, tilt_angle):
+        return ""
 
     def TestPointReceiving(self, request, context):
         box_scaled = self.scale_ipad_to_box(request)
-        pan_tilt = self.scale_box_to_pan_tilt(box_scaled)
+        pan_angle, tilt_angle = self.scale_box_to_pan_tilt(box_scaled)
+        self.move_servos(pan_angle, tilt_angle)
 
-        self.mutex.acquire()
-        try:
-            print('(' + str(request.x1) + ', ' + str(request.y1) + ') ----> ' + '(' + str(request.x2) + ', ' + str(request.y2) + ')')
-        finally:
-            self.mutex.release()
+        # self.mutex.acquire()
+        # try:
+        #     print('(' + str(request.x1) + ', ' + str(request.y1) + ') ----> ' + '(' + str(request.x2) + ', ' + str(request.y2) + ')')
+        # finally:
+        #     self.mutex.release()
         return grpc_pb2.GlowReply(message='Receieved!')
 
     def LotsOfPoints(self, request_iterator, context):
