@@ -57,25 +57,23 @@ def left_width():
     #give coordinate to move up
 
 
-#--- Returning our starting positions that we would start at
+# --- Returning our starting positions that we would start at
 def goToFirstPosit():
-	req = {}
-	req['x2'] = (-7*unit())
-	req['y2'] = (5*unit())
+    req = {}
+    req['x2'] = -7*unit()
+    req['y2'] = 5*unit()
     return req
 
 def goToSecondPosit():
 	req = {}
-	req['x2'] = (-3*unit())
-	req['y2'] = (5*unit())
-    #return ((-3*.9875),(5*.9875))
+	req['x2'] = -3*unit()
+	req['y2'] = 5*unit()
     return req
 
 def goToThirdPosit():
 	req = {}
 	req['x2'] = unit()
-	req['y2'] = (5*unit())
-    #return ((.9875),(5*.9875))
+	req['y2'] = 5*unit()
     return req
 
 def goToLastPosit():
