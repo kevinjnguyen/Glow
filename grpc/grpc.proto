@@ -23,11 +23,14 @@ package glow;
 
 service Glow {
   rpc TestPointReceiving (PointRequest) returns (GlowReply) {}
+  rpc LotsOfPoints(stream PointRequest) returns (GlowReply) {}
 }
 
 message PointRequest {
-  int32 x = 1;
-  int32 y = 2;
+  int32 x1 = 1;
+  int32 y1 = 2;
+  int32 x2 = 3;
+  int32 y2 = 4;
 }
 
 message GlowReply {
