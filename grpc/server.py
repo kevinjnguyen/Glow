@@ -88,10 +88,9 @@ def goToCenter():
     req['y2'] = float(0)
     return req
 
-#--- Number movement methods
-
-def move_to_coordinates(req):
-	pan_angle, tilt_angle = scale_box_to_pan_tilt(req)
+# --- Number movement methods
+def move_to_coordinates(request):
+    pan_angle, tilt_angle = scale_box_to_pan_tilt(request)
     pan_pwm = angle_to_pwm_pan(pan_angle)
     tilt_pwm = angle_to_pwm_tilt(tilt_angle)
     move_servos(pan_pwm, tilt_pwm)
