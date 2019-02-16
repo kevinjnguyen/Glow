@@ -94,6 +94,8 @@ def move_to_coordinates(request):
     pan_pwm = angle_to_pwm_pan(pan_angle)
     tilt_pwm = angle_to_pwm_tilt(tilt_angle)
     move_servos(pan_pwm, tilt_pwm)
+    time.sleep(0.5)
+
 
 def draw_num_0(position):
     req = {}
