@@ -95,7 +95,7 @@ def move_to_coordinates(request):
     tilt_pwm = angle_to_pwm_tilt(tilt_angle)
     move_servos(pan_pwm, tilt_pwm)
 
-def num_0(position):
+def draw_num_0(position):
     req = {}
     if(position == 0):
     	req = goToFirstPosit()
@@ -462,40 +462,39 @@ def draw_time():
 	hour = (now.hour)%12
 	minute_str = now.strftime("%M")
 
-    if (True):
-        num_0(0)
+    draw_num_0(0)
 
 	# # draw the hours
 	# if(hour == 1):
-	# 	num_0(0)
+	# 	draw_num_0(0)
 	# 	num_1(1)
 	# elif(hour == 2):
-	# 	num_0(0)
+	# 	draw_num_0(0)
 	# 	num_2(1)
 	# elif(hour == 3):
-	# 	num_0(0)
+	# 	draw_num_0(0)
 	# 	num_3(1)
 	# elif(hour == 4):
-	# 	num_0(0)
+	# 	draw_num_0(0)
 	# 	num_4(1)
 	# elif(hour == 5):
-	# 	num_0(0)
+	# 	draw_num_0(0)
 	# 	num_5(1)
 	# elif(hour == 6):
-	# 	num_0(0)
+	# 	draw_num_0(0)
 	# 	num_6(1)
 	# elif(hour == 7):
-	# 	num_0(0)
+	# 	draw_num_0(0)
 	# 	num_7(1)
 	# elif(hour == 8):
-	# 	num_0(0)
+	# 	draw_num_0(0)
 	# 	num_8(1)
 	# elif(hour == 9):
-	# 	num_0(0)
+	# 	draw_num_0(0)
 	# 	num_9(1)
 	# elif(hour == 10):
 	# 	num_1(0)
-	# 	num_0(1)
+	# 	draw_num_0(1)
 	# elif(hour == 11):
 	# 	num_1(0)
 	# 	num_1(1)
@@ -505,7 +504,7 @@ def draw_time():
 
 	# # draw first minute
 	# if(minute_str[0] == 0):
-	# 	num_0(2)
+	# 	draw_num_0(2)
 	# elif(minute_str[0] == 1):
 	# 	num_1(2)
 	# elif(minute_str[0] == 2):
@@ -519,7 +518,7 @@ def draw_time():
 
 	# # draw second minute
 	# if(minute_str[1] == 0):
-	# 	num_0(3)
+	# 	draw_num_0(3)
 	# elif(minute_str[1] == 1):
 	# 	num_1(3)
 	# elif(minute_str[1] == 2):
