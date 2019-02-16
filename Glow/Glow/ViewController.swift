@@ -19,6 +19,10 @@ class ViewController: UIViewController {
     var opacity: CGFloat = 1.0
     var swiped = false
     
+    var points: [(CGPoint, CGPoint)] = []
+    
+    var isSending: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -26,8 +30,22 @@ class ViewController: UIViewController {
 
     @IBAction func resetTouchBegan(_ sender: Any) {
         mainImageView.image = nil
+        self.isSending = false;
     }
+    
+    @IBAction func sendTouchBegan(_ sender: Any) {
+        self.isSending = true;
+        
+    }
+    
     func drawLine(from fromPoint: CGPoint, to toPoint: CGPoint) {
+        
+        if (isSending) {
+            return
+        }
+        
+        points.append((fromPoint, toPoint))
+        
         UIGraphicsBeginImageContext(view.frame.size)
         guard let context = UIGraphicsGetCurrentContext() else {
             return

@@ -31,7 +31,10 @@
                                 <rect key="frame" x="627" y="34" width="121" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Start"/>
+                                <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="sendTouchBegan:" destination="BYZ-38-t0r" eventType="touchUpInside" id="deq-NZ-u6r"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IGA-AQ-zzi" userLabel="MainImageView">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
