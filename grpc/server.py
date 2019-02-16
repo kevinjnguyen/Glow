@@ -86,8 +86,10 @@ def processData():
             request = queue.popleft()
             box_scaled = scale_ipad_to_box(request)
             pan_angle, tilt_angle = scale_box_to_pan_tilt(box_scaled)
-            pan_pwm = angle_to_pwm_pan(pan_angle)
-            tilt_pwm = angle_to_pwm_tilt(tilt_angle)
+            # pan_pwm = angle_to_pwm_pan(pan_angle)
+            # tilt_pwm = angle_to_pwm_tilt(tilt_angle)
+            pan_pwm = angle_to_pwm_pan(0.0)
+            tilt_pwm = angle_to_pwm_tilt(45.0)
             move_servos(pan_pwm, tilt_pwm)
     finally:
         mutex.release()
