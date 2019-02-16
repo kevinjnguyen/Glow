@@ -89,7 +89,7 @@ def processData():
             # pan_pwm = angle_to_pwm_pan(pan_angle)
             # tilt_pwm = angle_to_pwm_tilt(tilt_angle)
             pan_pwm = angle_to_pwm_pan(0.0)
-            tilt_pwm = angle_to_pwm_tilt(45.0)
+            tilt_pwm = angle_to_pwm_tilt(0.785398)
             move_servos(pan_pwm, tilt_pwm)
     finally:
         mutex.release()
