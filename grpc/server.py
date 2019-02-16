@@ -139,7 +139,7 @@ def polling():
         p = Thread(target = processData)
         p.start()
         if (line.did_start_new_line):
-            time.sleep(0.1)
+            time.sleep(0.5)
         
 
 if __name__ == '__main__':
