@@ -115,6 +115,7 @@ def polling():
     while True:
         p = Thread(target = processData)
         p.start()
+        time.sleep(1)
         
 
 if __name__ == '__main__':
