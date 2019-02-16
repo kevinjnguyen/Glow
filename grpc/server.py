@@ -127,7 +127,7 @@ def num_0(position):
 
     return "0"
 
-def num_1():
+def num_1(position):
     req = {}
     if(position == 0):
     	req = goToFirstPosit()
@@ -165,7 +165,7 @@ def num_1():
 
     return "1"
 
-def num_2():
+def num_2(position):
         req = {}
         if(position == 0):
         	req = goToFirstPosit()
@@ -198,7 +198,7 @@ def num_2():
         return "2"
 
 
-def num_3():
+def num_3(position):
         req = {}
         if(position == 0):
         	req = goToFirstPosit()
@@ -238,7 +238,7 @@ def num_3():
         laser_off()
         return "3"
 
-def num_4():
+def num_4(position):
     req = {}
     if(position == 0):
     	req = goToFirstPosit()
@@ -274,7 +274,7 @@ def num_4():
 
     return "4"
 
-def num_5():
+def num_5(position):
     req = {}
     if(position == 0):
     	req = goToFirstPosit()
@@ -310,7 +310,7 @@ def num_5():
 
     return "5"
 
-def num_6():
+def num_6(position):
     req = {}
     if(position == 0):
     	req = goToFirstPosit()
@@ -351,7 +351,7 @@ def num_6():
     return "6"
 
 
-def num_7():
+def num_7(position):
     req = {}
     if(position == 0):
     	req = goToFirstPosit()
@@ -421,7 +421,7 @@ def num_8(position):
     return "8"
 
 
-def num_9():
+def num_9(position):
     req = {}
     if(position == 0):
     	req = goToFirstPosit()
