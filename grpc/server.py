@@ -228,7 +228,7 @@ def num_3(position):
         req['x2'] += rigth_width()
         move_to_coordinates(req)
 
-        laseron()
+        laser_on()
 
         req['y2'] += down_length()
         move_to_coordinates(req)
@@ -297,7 +297,7 @@ def num_5(position):
     req['y2'] += down_length()
     move_to_coordinates(req)
 
-    req['x2'] += right_width()
+    req['x2'] += rigth_width()
     move_to_coordinates(req)
 
 
