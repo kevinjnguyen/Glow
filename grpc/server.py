@@ -11,18 +11,24 @@ import grpc_pb2
 import grpc_pb2_grpc
 
 _ONE_DAY_IN_SECONDS = 60 * 60 * 24
+GPIO.setmode(GPIO.BOARD)
+
+GPIO.setup(12, GPIO.OUT)
+GPIO.setup(31, GPIO.OUT)
+GPIO.setup(33, GPIO.OUT)
+
+bottom_servo = GPIO.PWM(12, 50)
+top_servo = GPIO.PWM(33, 50)
+
+def laser_on():
+    GPIO.output(31, True)
+
+def laser_off():
+    GPIO.output(31, False)
 
 class Greeter(grpc_pb2_grpc.GlowServicer):
 
     mutex = Lock()
-    GPIO.setmode(GPIO.BOARD)
-
-    GPIO.setup(12, GPIO.OUT)
-    GPIO.setup(31, GPIO.OUT)
-    GPIO.setup(33, GPIO.OUT)
-
-    bottom_servo = GPIO.PWM(12, 50)
-    top_servo = GPIO.PWM(33, 50)
 
     def scale_ipad_to_box(self, request):
         request.x1 = (request.x1 - 384.0) / 39.38
@@ -37,8 +43,8 @@ class Greeter(grpc_pb2_grpc.GlowServicer):
         return pan_angle, tilt_angle
 
     def move_servos(self, pan_angle, tilt_angle):
-        self.bottom_servo.ChangeDutyCycle(self.angle_to_pwm_pan(pan_angle))
-        self.top_servo.ChangeDutyCycle(self.angle_to_pwm_pan(tilt_angle))
+        bottom_servo.ChangeDutyCycle(self.angle_to_pwm_pan(pan_angle))
+        top_servo.ChangeDutyCycle(self.angle_to_pwm_pan(tilt_angle))
         return ""
 
     def angle_to_pwm_pan(self, angle):
@@ -49,12 +55,6 @@ class Greeter(grpc_pb2_grpc.GlowServicer):
 
     def recenter(self):
         self.move_servos(0, 0)
-
-    def laser_on(self):
-        GPIO.output(31, True)
-
-    def laser_off(self):
-        GPIO.output(31, False)
 
     def TestPointReceiving(self, request, context):
         box_scaled = self.scale_ipad_to_box(request)
@@ -79,12 +79,12 @@ def serve():
     grpc_pb2_grpc.add_GlowServicer_to_server(Greeter(), server)
     server.add_insecure_port('[::]:50051')
     server.start()
-    server.laser_on()
+    laser_on()
     try:
         while True:
             time.sleep(_ONE_DAY_IN_SECONDS)
     except KeyboardInterrupt:
-        server.laser_off()
+        laser_off()
         server.stop(0)
 
 
