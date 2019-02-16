@@ -82,6 +82,7 @@ def processData():
     mutex.acquire()
     try:
         if len(queue) > 0:
+            print('Should be moving...')
             request = queue.popleft()
             box_scaled = scale_ipad_to_box(request)
             pan_angle, tilt_angle = scale_box_to_pan_tilt(box_scaled)
