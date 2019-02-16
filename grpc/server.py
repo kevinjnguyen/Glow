@@ -80,7 +80,7 @@ def processData():
     mutex.acquire()
     try:
         print('PD: Acquired the lock.')
-        if queue.count > 0:
+        if len(queue) > 0:
             request = queue.popleft()
             box_scaled = scale_ipad_to_box(request)
             pan_angle, tilt_angle = scale_box_to_pan_tilt(box_scaled)
