@@ -37,9 +37,15 @@ class Greeter(grpc_pb2_grpc.GlowServicer):
         return pan_angle, tilt_angle
 
     def move_servos(self, pan_angle, tilt_angle):
-        self.bottom_servo.ChangeDutyCycle(pan_angle)
-        self.top_servo.ChangeDutyCycle(tilt_angle)
+        self.bottom_servo.ChangeDutyCycle(self.angle_to_pwm_pan(pan_angle))
+        self.top_servo.ChangeDutyCycle(self.angle_to_pwm_pan(tilt_angle))
         return ""
+
+    def angle_to_pwm_pan(self, angle):
+        return 7.75 + (angle * -2.47)
+
+    def angle_to_pwm_tilt(self, angle):
+        return 7.75 + (angle * -2.47)
 
     def TestPointReceiving(self, request, context):
         box_scaled = self.scale_ipad_to_box(request)
