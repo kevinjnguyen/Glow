@@ -103,8 +103,10 @@ def serve():
     laser_on()
     recenter()
 
-    move_servos(4, 4)
-
+    bottom_servo.start(2)
+    time.sleep(0.5)
+    top_servo.start(2)
+    time.sleep(0.5)
 
     try:
         while True:
