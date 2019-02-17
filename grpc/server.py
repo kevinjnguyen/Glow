@@ -645,8 +645,6 @@ def serve():
     top_servo.start(2)
     time.sleep(0.5)
 
-    draw_time()
-
     try:
         while True:
             polling()
