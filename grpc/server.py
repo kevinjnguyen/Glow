@@ -1,9 +1,9 @@
 from concurrent import futures
 from threading import Thread, Lock
+from datetime import datetime
 
 import RPi.GPIO as GPIO
 import time
-import datetime
 import logging
 import math
 import grpc
@@ -13,10 +13,12 @@ import grpc_pb2_grpc
 
 from collections import deque
 
+
 class current_line:
     def __init__(self, current_line):
         self.current_line = current_line
         self.did_start_new_line = False
+
 
 _ONE_DAY_IN_SECONDS = 60 * 60 * 24
 GPIO.setmode(GPIO.BOARD)
@@ -35,26 +37,32 @@ line = current_line(0)
 
 # -------------clockwork------------------- dorick branch BEGIN
 
-#---definitions
+# ---definitions
+
+
 def get_unit():
     return .9875
     # 1 unit is .9875
 
+
 def down_length():
     return -5*get_unit()
-    #add coordinate to move down
+    # add coordinate to move down
+
 
 def up_length():
     return 5*get_unit()
-    #give coordinate to move up
+    # give coordinate to move up
+
 
 def rigth_width():
     return 3*get_unit()
-    #give coordinate to move up
+    # give coordinate to move up
+
 
 def left_width():
     return -3*get_unit()
-    #give coordinate to move up
+    # give coordinate to move up
 
 
 # --- Returning our starting positions that we would start at
@@ -64,11 +72,13 @@ def goToFirstPosit():
     req['y2'] = 5*get_unit()
     return req
 
+
 def goToSecondPosit():
     req = {}
     req['x2'] = -3*get_unit()
     req['y2'] = 5*get_unit()
     return req
+
 
 def goToThirdPosit():
     req = {}
@@ -76,11 +86,13 @@ def goToThirdPosit():
     req['y2'] = 5*get_unit()
     return req
 
+
 def goToLastPosit():
     req = {}
     req['x2'] = 5*get_unit()
     req['y2'] = 5*get_unit()
     return req
+
 
 def goToCenter():
     req = {}
@@ -89,6 +101,8 @@ def goToCenter():
     return req
 
 # --- Number movement methods
+
+
 def move_to_coordinates(request):
     pan_angle, tilt_angle = scale_box_to_pan_tilt(request)
     pan_pwm = angle_to_pwm_pan(pan_angle)
@@ -101,13 +115,13 @@ def draw_num_0(position):
     laser_off()
     req = {}
     if(position == 0):
-    	req = goToFirstPosit()
+        req = goToFirstPosit()
     elif(position == 1):
-    	req = goToSecondPosit()
+        req = goToSecondPosit()
     elif(position == 2):
-    	req = goToThirdPosit()
+        req = goToThirdPosit()
     else:
-    	req = goToLastPosit()
+        req = goToLastPosit()
 
     move_to_coordinates(req)
 
@@ -130,25 +144,24 @@ def draw_num_0(position):
 
     return "0"
 
+
 def num_1(position):
     req = {}
     if(position == 0):
-    	req = goToFirstPosit()
+        req = goToFirstPosit()
     elif(position == 1):
-    	req = goToSecondPosit()
+        req = goToSecondPosit()
     elif(position == 2):
-    	req = goToThirdPosit()
+        req = goToThirdPosit()
     else:
-    	req = goToLastPosit()
+        req = goToLastPosit()
 
     move_to_coordinates(req)
-
 
     req['x2'] += rigth_width()
     move_to_coordinates(req)
 
     laser_on()
-
 
     req['y2'] += down_length()
     move_to_coordinates(req)
@@ -168,16 +181,17 @@ def num_1(position):
 
     return "1"
 
+
 def num_2(position):
         req = {}
         if(position == 0):
-        	req = goToFirstPosit()
+            req = goToFirstPosit()
         elif(position == 1):
-        	req = goToSecondPosit()
+            req = goToSecondPosit()
         elif(position == 2):
-        	req = goToThirdPosit()
+            req = goToThirdPosit()
         else:
-        	req = goToLastPosit()
+            req = goToLastPosit()
 
         # corner
         move_to_coordinates(req)
@@ -204,13 +218,13 @@ def num_2(position):
 def num_3(position):
         req = {}
         if(position == 0):
-        	req = goToFirstPosit()
+            req = goToFirstPosit()
         elif(position == 1):
-        	req = goToSecondPosit()
+            req = goToSecondPosit()
         elif(position == 2):
-        	req = goToThirdPosit()
+            req = goToThirdPosit()
         else:
-        	req = goToLastPosit()
+            req = goToLastPosit()
 
         # corner
         move_to_coordinates(req)
@@ -227,7 +241,6 @@ def num_3(position):
 
         laser_off()
 
-
         req['x2'] += rigth_width()
         move_to_coordinates(req)
 
@@ -241,19 +254,19 @@ def num_3(position):
         laser_off()
         return "3"
 
+
 def num_4(position):
     req = {}
     if(position == 0):
-    	req = goToFirstPosit()
+        req = goToFirstPosit()
     elif(position == 1):
-    	req = goToSecondPosit()
+        req = goToSecondPosit()
     elif(position == 2):
-    	req = goToThirdPosit()
+        req = goToThirdPosit()
     else:
-    	req = goToLastPosit()
+        req = goToLastPosit()
 
     move_to_coordinates(req)
-
 
     laser_on()
     req['y2'] += down_length()
@@ -277,16 +290,17 @@ def num_4(position):
 
     return "4"
 
+
 def num_5(position):
     req = {}
     if(position == 0):
-    	req = goToFirstPosit()
+        req = goToFirstPosit()
     elif(position == 1):
-    	req = goToSecondPosit()
+        req = goToSecondPosit()
     elif(position == 2):
-    	req = goToThirdPosit()
+        req = goToThirdPosit()
     else:
-    	req = goToLastPosit()
+        req = goToLastPosit()
 
     move_to_coordinates(req)
 
@@ -303,7 +317,6 @@ def num_5(position):
     req['x2'] += rigth_width()
     move_to_coordinates(req)
 
-
     req['y2'] += down_length()
     move_to_coordinates(req)
     req['x2'] += left_width()
@@ -313,19 +326,19 @@ def num_5(position):
 
     return "5"
 
+
 def num_6(position):
     req = {}
     if(position == 0):
-    	req = goToFirstPosit()
+        req = goToFirstPosit()
     elif(position == 1):
-    	req = goToSecondPosit()
+        req = goToSecondPosit()
     elif(position == 2):
-    	req = goToThirdPosit()
+        req = goToThirdPosit()
     else:
-    	req = goToLastPosit()
+        req = goToLastPosit()
 
     move_to_coordinates(req)
-
 
     req['x2'] += rigth_width()
     move_to_coordinates(req)
@@ -357,13 +370,13 @@ def num_6(position):
 def num_7(position):
     req = {}
     if(position == 0):
-    	req = goToFirstPosit()
+        req = goToFirstPosit()
     elif(position == 1):
-    	req = goToSecondPosit()
+        req = goToSecondPosit()
     elif(position == 2):
-    	req = goToThirdPosit()
+        req = goToThirdPosit()
     else:
-    	req = goToLastPosit()
+        req = goToLastPosit()
 
     move_to_coordinates(req)
 
@@ -381,16 +394,17 @@ def num_7(position):
 
     return "7"
 
+
 def num_8(position):
     req = {}
     if(position == 0):
-    	req = goToFirstPosit()
+        req = goToFirstPosit()
     elif(position == 1):
-    	req = goToSecondPosit()
+        req = goToSecondPosit()
     elif(position == 2):
-    	req = goToThirdPosit()
+        req = goToThirdPosit()
     else:
-    	req = goToLastPosit()
+        req = goToLastPosit()
 
     move_to_coordinates(req)
 
@@ -427,13 +441,13 @@ def num_8(position):
 def num_9(position):
     req = {}
     if(position == 0):
-    	req = goToFirstPosit()
+        req = goToFirstPosit()
     elif(position == 1):
-    	req = goToSecondPosit()
+        req = goToSecondPosit()
     elif(position == 2):
-    	req = goToThirdPosit()
+        req = goToThirdPosit()
     else:
-    	req = goToLastPosit()
+        req = goToLastPosit()
 
     move_to_coordinates(req)
 
@@ -455,93 +469,89 @@ def num_9(position):
     req['y2'] += down_length()
     move_to_coordinates(req)
 
-
     laser_off()
 
     return "9"
 
-def draw_time():
-	# now = datetime.datetime.now()
-	# hour = (now.hour) % 12
-	# minute_str = now.strftime("%M")
-    draw_num_0(0)
-    draw_num_0(1)
-    draw_num_0(2)
-    draw_num_0(3)
-    return ""
-	# # draw the hours
-	# if(hour == 1):
-	# 	draw_num_0(0)
-	# 	num_1(1)
-	# elif(hour == 2):
-	# 	draw_num_0(0)
-	# 	num_2(1)
-	# elif(hour == 3):
-	# 	draw_num_0(0)
-	# 	num_3(1)
-	# elif(hour == 4):
-	# 	draw_num_0(0)
-	# 	num_4(1)
-	# elif(hour == 5):
-	# 	draw_num_0(0)
-	# 	num_5(1)
-	# elif(hour == 6):
-	# 	draw_num_0(0)
-	# 	num_6(1)
-	# elif(hour == 7):
-	# 	draw_num_0(0)
-	# 	num_7(1)
-	# elif(hour == 8):
-	# 	draw_num_0(0)
-	# 	num_8(1)
-	# elif(hour == 9):
-	# 	draw_num_0(0)
-	# 	num_9(1)
-	# elif(hour == 10):
-	# 	num_1(0)
-	# 	draw_num_0(1)
-	# elif(hour == 11):
-	# 	num_1(0)
-	# 	num_1(1)
-	# elif(hour == 12):
-	# 	num_1(0)
-	# 	num_2(1)
 
-	# # draw first minute
-	# if(minute_str[0] == 0):
-	# 	draw_num_0(2)
-	# elif(minute_str[0] == 1):
-	# 	num_1(2)
-	# elif(minute_str[0] == 2):
-	# 	num_2(2)
-	# elif(minute_str[0] == 3):
-	# 	num_3(2)
-	# elif(minute_str[0] == 4):
-	# 	num_4(2)
-	# elif(minute_str[0] == 5):
-	# 	num_5(2)
+def draw_time_2():
+    strings = time.strftime("%Y,%m,%d,%H,%M,%S")
+    t = strings.split(',')
+    hour = t[3] % 12
+    minute_str = t[4]
+    # draw the hours
+    if(hour == 1):
+        draw_num_0(0)
+        num_1(1)
+    elif(hour == 2):
+        draw_num_0(0)
+        num_2(1)
+    elif(hour == 3):
+        draw_num_0(0)
+        num_3(1)
+    elif(hour == 4):
+        draw_num_0(0)
+        num_4(1)
+    elif(hour == 5):
+        draw_num_0(0)
+        num_5(1)
+    elif(hour == 6):
+        draw_num_0(0)
+        num_6(1)
+    elif(hour == 7):
+        draw_num_0(0)
+        num_7(1)
+    elif(hour == 8):
+        draw_num_0(0)
+        num_8(1)
+    elif(hour == 9):
+        draw_num_0(0)
+        num_9(1)
+    elif(hour == 10):
+        num_1(0)
+        draw_num_0(1)
+    elif(hour == 11):
+        num_1(0)
+        num_1(1)
+    elif(hour == 12):
+        num_1(0)
+        num_2(1)
 
-	# # draw second minute
-	# if(minute_str[1] == 0):
-	# 	draw_num_0(3)
-	# elif(minute_str[1] == 1):
-	# 	num_1(3)
-	# elif(minute_str[1] == 2):
-	# 	num_2(3)
-	# elif(minute_str[1] == 3):
-	# 	num_3(3)
-	# elif(minute_str[1] == 4):
-	# 	num_4(3)
-	# elif(minute_str[1] == 5):
-	# 	num_5(3)
-	# elif(minute_str[1] == 6):
-	# 	num_6(3)
-	# elif(minute_str[1] == 7):
-	# 	num_7(3)
-	# elif(minute_str[1] == 8):
-	# 	num_8(3)
-	# elif(minute_str[1] == 9):
-	# 	num_9(3)
+    # draw first minute
+    if(minute_str[0] == 0):
+        draw_num_0(2)
+    elif(minute_str[0] == 1):
+        num_1(2)
+    elif(minute_str[0] == 2):
+        num_2(2)
+    elif(minute_str[0] == 3):
+        num_3(2)
+    elif(minute_str[0] == 4):
+        num_4(2)
+    elif(minute_str[0] == 5):
+        num_5(2)
+
+    # draw second minute
+    if(minute_str[1] == 0):
+        draw_num_0(3)
+    elif(minute_str[1] == 1):
+        num_1(3)
+    elif(minute_str[1] == 2):
+        num_2(3)
+    elif(minute_str[1] == 3):
+        num_3(3)
+    elif(minute_str[1] == 4):
+        num_4(3)
+    elif(minute_str[1] == 5):
+        num_5(3)
+    elif(minute_str[1] == 6):
+        num_6(3)
+    elif(minute_str[1] == 7):
+        num_7(3)
+    elif(minute_str[1] == 8):
+        num_8(3)
+    elif(minute_str[1] == 9):
+        num_9(3)
 
 
 # -------------clockwork------------------- dorick branch END
