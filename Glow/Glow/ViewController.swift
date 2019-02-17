@@ -14,6 +14,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var tempImageView: UIImageView!
+    @IBOutlet weak var backgroundView: UIImageView!
     
     var lastPoint = CGPoint.zero
     var color = UIColor.black
@@ -31,6 +32,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.sendSubviewToBack(backgroundView)
     }
 
     @IBAction func resetTouchBegan(_ sender: Any) {

@@ -71,53 +71,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7NK-68-gcN">
-                                <rect key="frame" x="239" y="20" width="289" height="49"/>
-                                <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="42"/>
-                                <state key="normal" title="Reset">
-                                    <color key="titleColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="resetTouchBegan:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KVe-wG-HTN"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpM-T4-kMy">
-                                <rect key="frame" x="637" y="14" width="111" height="61"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IGA-AQ-zzi" userLabel="MainImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P9K-lr-8yL" userLabel="TempImageView">
+                                <rect key="frame" x="-1" y="0.0" width="768" height="1024"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TRO-CJ-zFX">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="256"/>
+                                <color key="backgroundColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PdF-Gb-eJY">
+                                <rect key="frame" x="601" y="103" width="111" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="111" id="lW3-B2-2mm"/>
+                                    <constraint firstAttribute="width" constant="111" id="zKw-nF-Xnl"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="42"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="88"/>
                                 <state key="normal" title="🕔">
                                     <color key="titleColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="clockPressBegan:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ao0-dD-8HK"/>
-                                    <action selector="resetTouchBegan:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rfD-tl-Bqd"/>
+                                    <action selector="clockPressBegan:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sMx-wW-vev"/>
+                                    <action selector="resetTouchBegan:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6fD-gQ-ATI"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IGA-AQ-zzi" userLabel="MainImageView">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P9K-lr-8yL" userLabel="TempImageView">
-                                <rect key="frame" x="-1" y="0.0" width="768" height="1024"/>
-                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="guN-rq-fLN">
+                                <rect key="frame" x="141" y="104" width="400" height="49"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="125"/>
+                                <state key="normal" title="Reset">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetTouchBegan:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tbi-sZ-t4n"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="IGA-AQ-zzi" firstAttribute="trailing" secondItem="P9K-lr-8yL" secondAttribute="trailing" id="22o-Dx-wUj"/>
-                            <constraint firstItem="7NK-68-gcN" firstAttribute="baseline" secondItem="fpM-T4-kMy" secondAttribute="baseline" id="6YK-Nh-R7X"/>
-                            <constraint firstItem="IGA-AQ-zzi" firstAttribute="centerX" secondItem="7NK-68-gcN" secondAttribute="centerX" id="878-z7-nVx"/>
+                            <constraint firstItem="IGA-AQ-zzi" firstAttribute="trailing" secondItem="P9K-lr-8yL" secondAttribute="trailing" constant="1" id="22o-Dx-wUj"/>
+                            <constraint firstItem="guN-rq-fLN" firstAttribute="centerY" secondItem="PdF-Gb-eJY" secondAttribute="centerY" id="8d5-Ht-F2f"/>
                             <constraint firstItem="P9K-lr-8yL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Ehh-N0-WeQ"/>
-                            <constraint firstItem="P9K-lr-8yL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FZP-TV-CBT"/>
-                            <constraint firstItem="fpM-T4-kMy" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="GQe-HL-Wvw"/>
+                            <constraint firstItem="P9K-lr-8yL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-1" id="FZP-TV-CBT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TRO-CJ-zFX" secondAttribute="bottom" constant="768" id="GFb-ob-wvU"/>
+                            <constraint firstItem="TRO-CJ-zFX" firstAttribute="centerX" secondItem="guN-rq-fLN" secondAttribute="centerX" constant="43" id="IM4-Vm-Rnf"/>
                             <constraint firstItem="IGA-AQ-zzi" firstAttribute="bottom" secondItem="P9K-lr-8yL" secondAttribute="bottom" id="JDU-bI-OTL"/>
+                            <constraint firstItem="TRO-CJ-zFX" firstAttribute="centerY" secondItem="guN-rq-fLN" secondAttribute="centerY" id="JKN-pV-F72"/>
                             <constraint firstItem="IGA-AQ-zzi" firstAttribute="top" secondItem="P9K-lr-8yL" secondAttribute="top" id="Que-Zb-6OW"/>
-                            <constraint firstItem="IGA-AQ-zzi" firstAttribute="leading" secondItem="P9K-lr-8yL" secondAttribute="leading" id="TQh-9y-LQi"/>
-                            <constraint firstItem="7NK-68-gcN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="UqK-2J-S2w"/>
-                            <constraint firstAttribute="trailing" secondItem="P9K-lr-8yL" secondAttribute="trailing" id="XBk-kl-2oQ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7NK-68-gcN" secondAttribute="bottom" constant="955" id="fEX-nX-4Gj"/>
+                            <constraint firstItem="IGA-AQ-zzi" firstAttribute="leading" secondItem="P9K-lr-8yL" secondAttribute="leading" constant="1" id="TQh-9y-LQi"/>
+                            <constraint firstItem="guN-rq-fLN" firstAttribute="bottom" secondItem="PdF-Gb-eJY" secondAttribute="bottom" id="Urc-6s-5r2"/>
+                            <constraint firstItem="guN-rq-fLN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="141" id="Wdn-Ik-QKx"/>
+                            <constraint firstAttribute="trailing" secondItem="P9K-lr-8yL" secondAttribute="trailing" constant="1" id="XBk-kl-2oQ"/>
+                            <constraint firstItem="TRO-CJ-zFX" firstAttribute="top" secondItem="IGA-AQ-zzi" secondAttribute="top" id="Z43-gY-aq7"/>
                             <constraint firstItem="IGA-AQ-zzi" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="jtW-fY-4z2"/>
-                            <constraint firstItem="7NK-68-gcN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="239" id="ncI-fu-YLb"/>
+                            <constraint firstItem="TRO-CJ-zFX" firstAttribute="trailing" secondItem="IGA-AQ-zzi" secondAttribute="trailing" id="kw8-ff-sXw"/>
+                            <constraint firstItem="PdF-Gb-eJY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="83" id="rzd-gN-0MT"/>
+                            <constraint firstItem="TRO-CJ-zFX" firstAttribute="leading" secondItem="IGA-AQ-zzi" secondAttribute="leading" id="vk9-2t-Xlz"/>
+                            <constraint firstItem="PdF-Gb-eJY" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="-36" id="x2T-Cr-vJr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -129,6 +138,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="backgroundView" destination="TRO-CJ-zFX" id="ixH-uk-2Yr"/>
                         <outlet property="mainImageView" destination="IGA-AQ-zzi" id="6go-Rh-Pps"/>
                         <outlet property="tempImageView" destination="P9K-lr-8yL" id="Tek-MI-SqK"/>
                     </connections>
