@@ -642,7 +642,7 @@ def serve():
     top_servo.start(2)
     time.sleep(0.5)
 
-    draw_time()
+    draw_time_2()
 
     try:
         while True:
