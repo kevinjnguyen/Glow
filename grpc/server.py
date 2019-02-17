@@ -517,39 +517,39 @@ def draw_time():
         num_2(1)
 
     # draw first minute
-    if(minute_str[0] == 0):
+    if(int(minute_str[0]) == 0):
         draw_num_0(2)
-    elif(minute_str[0] == 1):
+    elif(int(minute_str[0]) == 1):
         num_1(2)
-    elif(minute_str[0] == 2):
+    elif(int(minute_str[0]) == 2):
         num_2(2)
-    elif(minute_str[0] == 3):
+    elif(int(minute_str[0]) == 3):
         num_3(2)
-    elif(minute_str[0] == 4):
+    elif(int(minute_str[0]) == 4):
         num_4(2)
-    elif(minute_str[0] == 5):
+    elif(int(minute_str[0]) == 5):
         num_5(2)
 
     # draw second minute
-    if(minute_str[1] == 0):
+    if(int(minute_str[1]) == 0):
         draw_num_0(3)
-    elif(minute_str[1] == 1):
+    elif(int(minute_str[1]) == 1):
         num_1(3)
-    elif(minute_str[1] == 2):
+    elif(int(minute_str[1]) == 2):
         num_2(3)
-    elif(minute_str[1] == 3):
+    elif(int(minute_str[1]) == 3):
         num_3(3)
-    elif(minute_str[1] == 4):
+    elif(int(minute_str[1]) == 4):
         num_4(3)
-    elif(minute_str[1] == 5):
+    elif(int(minute_str[1]) == 5):
         num_5(3)
-    elif(minute_str[1] == 6):
+    elif(int(minute_str[1]) == 6):
         num_6(3)
-    elif(minute_str[1] == 7):
+    elif(int(minute_str[1]) == 7):
         num_7(3)
-    elif(minute_str[1] == 8):
+    elif(int(minute_str[1]) == 8):
         num_8(3)
-    elif(minute_str[1] == 9):
+    elif(int(minute_str[1]) == 9):
         num_9(3)
 
 
