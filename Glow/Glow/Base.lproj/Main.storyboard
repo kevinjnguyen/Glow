@@ -81,19 +81,35 @@
                                     <action selector="resetTouchBegan:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KVe-wG-HTN"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpM-T4-kMy">
+                                <rect key="frame" x="637" y="14" width="111" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="111" id="lW3-B2-2mm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="42"/>
+                                <state key="normal" title="🕔">
+                                    <color key="titleColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="clockPressBegan:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ao0-dD-8HK"/>
+                                    <action selector="resetTouchBegan:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rfD-tl-Bqd"/>
+                                </connections>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IGA-AQ-zzi" userLabel="MainImageView">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P9K-lr-8yL" userLabel="TempImageView">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P9K-lr-8yL" userLabel="TempImageView">
+                                <rect key="frame" x="-1" y="0.0" width="768" height="1024"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="IGA-AQ-zzi" firstAttribute="trailing" secondItem="P9K-lr-8yL" secondAttribute="trailing" id="22o-Dx-wUj"/>
+                            <constraint firstItem="7NK-68-gcN" firstAttribute="baseline" secondItem="fpM-T4-kMy" secondAttribute="baseline" id="6YK-Nh-R7X"/>
                             <constraint firstItem="IGA-AQ-zzi" firstAttribute="centerX" secondItem="7NK-68-gcN" secondAttribute="centerX" id="878-z7-nVx"/>
                             <constraint firstItem="P9K-lr-8yL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Ehh-N0-WeQ"/>
                             <constraint firstItem="P9K-lr-8yL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FZP-TV-CBT"/>
+                            <constraint firstItem="fpM-T4-kMy" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="GQe-HL-Wvw"/>
                             <constraint firstItem="IGA-AQ-zzi" firstAttribute="bottom" secondItem="P9K-lr-8yL" secondAttribute="bottom" id="JDU-bI-OTL"/>
                             <constraint firstItem="IGA-AQ-zzi" firstAttribute="top" secondItem="P9K-lr-8yL" secondAttribute="top" id="Que-Zb-6OW"/>
                             <constraint firstItem="IGA-AQ-zzi" firstAttribute="leading" secondItem="P9K-lr-8yL" secondAttribute="leading" id="TQh-9y-LQi"/>

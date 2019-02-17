@@ -52,6 +52,12 @@ fileprivate final class Glow_GlowLotsOfPointsCallBase: ClientCallClientStreaming
   override class var method: String { return "/glow.Glow/LotsOfPoints" }
 }
 
+internal protocol Glow_GlowDrawTimeCall: ClientCallUnary {}
+
+fileprivate final class Glow_GlowDrawTimeCallBase: ClientCallUnaryBase<Glow_PointRequest, Glow_GlowReply>, Glow_GlowDrawTimeCall {
+  override class var method: String { return "/glow.Glow/DrawTime" }
+}
+
 
 /// Instantiate Glow_GlowServiceClient, then call methods of this protocol to make API calls.
 internal protocol Glow_GlowService: ServiceClient {
@@ -64,6 +70,11 @@ internal protocol Glow_GlowService: ServiceClient {
   /// Use methods on the returned object to stream messages and
   /// to close the connection and wait for a final response.
   func lotsOfPoints(completion: ((CallResult) -> Void)?) throws -> Glow_GlowLotsOfPointsCall
+
+  /// Synchronous. Unary.
+  func drawTime(_ request: Glow_PointRequest) throws -> Glow_GlowReply
+  /// Asynchronous. Unary.
+  func drawTime(_ request: Glow_PointRequest, completion: @escaping (Glow_GlowReply?, CallResult) -> Void) throws -> Glow_GlowDrawTimeCall
 
 }
 
@@ -85,6 +96,17 @@ internal final class Glow_GlowServiceClient: ServiceClientBase, Glow_GlowService
   internal func lotsOfPoints(completion: ((CallResult) -> Void)?) throws -> Glow_GlowLotsOfPointsCall {
     return try Glow_GlowLotsOfPointsCallBase(channel)
       .start(metadata: metadata, completion: completion)
+  }
+
+  /// Synchronous. Unary.
+  internal func drawTime(_ request: Glow_PointRequest) throws -> Glow_GlowReply {
+    return try Glow_GlowDrawTimeCallBase(channel)
+      .run(request: request, metadata: metadata)
+  }
+  /// Asynchronous. Unary.
+  internal func drawTime(_ request: Glow_PointRequest, completion: @escaping (Glow_GlowReply?, CallResult) -> Void) throws -> Glow_GlowDrawTimeCall {
+    return try Glow_GlowDrawTimeCallBase(channel)
+      .start(request: request, metadata: metadata, completion: completion)
   }
 
 }

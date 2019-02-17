@@ -39,6 +39,14 @@ class ViewController: UIViewController {
         self.points = []
     }
     
+    @IBAction func clockPressBegan(_ sender: Any) {
+        do {
+            try glow_rep.drawTime()
+        } catch {
+            print("error")
+        }
+    }
+    
     @IBAction func didPressBack(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }

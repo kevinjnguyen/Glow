@@ -19,4 +19,8 @@ class GlowRepository {
     func sendPoint(point: Glow_PointRequest) throws {
         try client.testPointReceiving(point)
     }
+    
+    func drawTime() throws {
+        try client.drawTime(Glow_PointRequest())
+    }
 }
