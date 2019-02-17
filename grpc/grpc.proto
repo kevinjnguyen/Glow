@@ -24,6 +24,7 @@ package glow;
 service Glow {
   rpc TestPointReceiving (PointRequest) returns (GlowReply) {}
   rpc LotsOfPoints(stream PointRequest) returns (GlowReply) {}
+  rpc DrawTime (PointRequest) returns (GlowReply) {}
 }
 
 message PointRequest {

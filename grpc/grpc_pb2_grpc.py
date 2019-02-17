@@ -24,6 +24,11 @@ class GlowStub(object):
         request_serializer=grpc__pb2.PointRequest.SerializeToString,
         response_deserializer=grpc__pb2.GlowReply.FromString,
         )
+    self.DrawTime = channel.unary_unary(
+        '/glow.Glow/DrawTime',
+        request_serializer=grpc__pb2.PointRequest.SerializeToString,
+        response_deserializer=grpc__pb2.GlowReply.FromString,
+        )
 
 
 class GlowServicer(object):
@@ -44,6 +49,13 @@ class GlowServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def DrawTime(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_GlowServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -54,6 +66,11 @@ def add_GlowServicer_to_server(servicer, server):
       ),
       'LotsOfPoints': grpc.stream_unary_rpc_method_handler(
           servicer.LotsOfPoints,
+          request_deserializer=grpc__pb2.PointRequest.FromString,
+          response_serializer=grpc__pb2.GlowReply.SerializeToString,
+      ),
+      'DrawTime': grpc.unary_unary_rpc_method_handler(
+          servicer.DrawTime,
           request_deserializer=grpc__pb2.PointRequest.FromString,
           response_serializer=grpc__pb2.GlowReply.SerializeToString,
       ),

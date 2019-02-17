@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='glow',
   syntax='proto3',
   serialized_options=_b('\n\020io.tamumake.glowB\004GlowP\001\242\002\003HLW'),
-  serialized_pb=_b('\n\ngrpc.proto\x12\x04glow\"L\n\x0cPointRequest\x12\n\n\x02x1\x18\x01 \x01(\x05\x12\n\n\x02y1\x18\x02 \x01(\x05\x12\n\n\x02x2\x18\x03 \x01(\x05\x12\n\n\x02y2\x18\x04 \x01(\x05\x12\x0c\n\x04line\x18\x05 \x01(\x05\"\x1c\n\tGlowReply\x12\x0f\n\x07message\x18\x01 \x01(\t2|\n\x04Glow\x12;\n\x12TestPointReceiving\x12\x12.glow.PointRequest\x1a\x0f.glow.GlowReply\"\x00\x12\x37\n\x0cLotsOfPoints\x12\x12.glow.PointRequest\x1a\x0f.glow.GlowReply\"\x00(\x01\x42 \n\x10io.tamumake.glowB\x04GlowP\x01\xa2\x02\x03HLWb\x06proto3')
+  serialized_pb=_b('\n\ngrpc.proto\x12\x04glow\"L\n\x0cPointRequest\x12\n\n\x02x1\x18\x01 \x01(\x05\x12\n\n\x02y1\x18\x02 \x01(\x05\x12\n\n\x02x2\x18\x03 \x01(\x05\x12\n\n\x02y2\x18\x04 \x01(\x05\x12\x0c\n\x04line\x18\x05 \x01(\x05\"\x1c\n\tGlowReply\x12\x0f\n\x07message\x18\x01 \x01(\t2\xaf\x01\n\x04Glow\x12;\n\x12TestPointReceiving\x12\x12.glow.PointRequest\x1a\x0f.glow.GlowReply\"\x00\x12\x37\n\x0cLotsOfPoints\x12\x12.glow.PointRequest\x1a\x0f.glow.GlowReply\"\x00(\x01\x12\x31\n\x08\x44rawTime\x12\x12.glow.PointRequest\x1a\x0f.glow.GlowReply\"\x00\x42 \n\x10io.tamumake.glowB\x04GlowP\x01\xa2\x02\x03HLWb\x06proto3')
 )
 
 
@@ -141,8 +141,8 @@ _GLOW = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=128,
-  serialized_end=252,
+  serialized_start=129,
+  serialized_end=304,
   methods=[
   _descriptor.MethodDescriptor(
     name='TestPointReceiving',
@@ -157,6 +157,15 @@ _GLOW = _descriptor.ServiceDescriptor(
     name='LotsOfPoints',
     full_name='glow.Glow.LotsOfPoints',
     index=1,
+    containing_service=None,
+    input_type=_POINTREQUEST,
+    output_type=_GLOWREPLY,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='DrawTime',
+    full_name='glow.Glow.DrawTime',
+    index=2,
     containing_service=None,
     input_type=_POINTREQUEST,
     output_type=_GLOWREPLY,
