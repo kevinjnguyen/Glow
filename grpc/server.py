@@ -474,11 +474,10 @@ def num_9(position):
     return "9"
 
 
-def draw_time_2():
-    strings = time.strftime("%Y,%m,%d,%H,%M,%S")
-    t = strings.split(',')
-    hour = t[3] % 12
-    minute_str = t[4]
+def draw_time():
+    now = datetime.datetime.now()
+    hour = (now.hour) % 12
+    minute_str = now.strftime("%M")
     # draw the hours
     if(hour == 1):
         draw_num_0(0)
@@ -642,7 +641,7 @@ def serve():
     top_servo.start(2)
     time.sleep(0.5)
 
-    draw_time_2()
+    draw_time()
 
     try:
         while True:
