@@ -599,6 +599,10 @@ class Greeter(grpc_pb2_grpc.GlowServicer):
             mutex.release()
         return grpc_pb2.GlowReply(message='Receieved!')
 
+    def DrawTime(self, request, context):
+        draw_time()
+        return grpc_pb2.GlowReply(message='Receieved!')
+
     def LotsOfPoints(self, request_iterator, context):
         for new_point in request_iterator:
             print('(' + str(new_point.x1) + ', ' + str(new_point.y1) + ') ----> ' + '(' + str(new_point.x2) + ', ' + str(new_point.y2))
